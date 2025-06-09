@@ -10,6 +10,6 @@ public class TestController {
     @GetMapping("/api/test/welcome")
     public String testWelcomeApi (){
         String s = "Welcome to the Flight Booking Application";
-        return s;//new ResponseEntity<>(s,HttpStatus.CREATED);
+        return s;
     }
 }
