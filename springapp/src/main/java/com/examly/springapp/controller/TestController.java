@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
     @GetMapping("/api/test/welcome")
-    public ResponseEntity<String> testWelcomeApi (){
+    public String testWelcomeApi (){
         String s = "Welcome to the Flight Booking Application";
-        return new ResponseEntity<>(s,HttpStatus.CREATED);
+        return s;//new ResponseEntity<>(s,HttpStatus.CREATED);
     }
 }
