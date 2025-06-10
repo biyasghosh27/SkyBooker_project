@@ -45,7 +45,7 @@ public class FlightController {
 
     @PutMapping("/api/flights/{flightId}")
     public ResponseEntity<Flight> modifyFlight(@PathVariable int flightId, @RequestBody Flight flight){
-        Optional<Flight> optionalFlight = flightService.updatedFlight(flightId,flight);
+        Optional<Flight> optionalFlight = flightService.updateFlight(flightId,flight);
         if(optionalFlight.isPresent()){
             return new ResponseEntity<>(optionalFlight.get(),HttpStatus.OK);
         }
