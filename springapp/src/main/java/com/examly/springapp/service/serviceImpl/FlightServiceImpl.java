@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.metrics.jfr.FlightRecorderApplicationStartup;
 import org.springframework.stereotype.Service;
 
-import com.examly.repository.FlightRepo;
 import com.examly.springapp.model.Flight;
+import com.examly.springapp.repository.FlightRepo;
 import com.examly.springapp.service.FlightService;
 
 @Service
