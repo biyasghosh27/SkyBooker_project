@@ -27,7 +27,7 @@ public class TestController {
 
     @GetMapping("api/test/flights")
     public List<Flight> showFlights(){
-        return flightService.geFlights();
+        return flightService.getFlights();
     }
     
 }
