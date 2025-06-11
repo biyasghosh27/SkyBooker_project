@@ -10,4 +10,6 @@ public interface FlightService {
     public List<Flight> getFlightsForPre();
     public Flight createFlight(Flight flight);
     public Optional<Flight> updateFlight(long flightId, Flight flightDeatils);
+    public Flight getFlightById(long flightId);
+    public boolean removeFlight(long flightId);
 }

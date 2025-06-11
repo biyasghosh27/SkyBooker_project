@@ -54,5 +54,23 @@ public class FlightServiceImpl implements FlightService{
         return flightListpre;
     }
 
+    public Flight getFlightById(long flightId){
+        Optional<Flight> optionalFlight = flightRepo.findById(flightId);
+        if(optionalFlight.isEmpty()){
+            throw new RuntimeException("");
+        }
+        Flight flight = optionalFlight.get();
+        return flight;
+    }
+
+    public boolean removeFlight(long flightId){
+        Optional<Flight> optionalFlight = flightRepo.findById(flightId); 
+        if(optionalFlight.isEmpty()){
+            return false;
+        }
+        Flight flight = optionalFlight.get();
+        flightRepo.delete(flight);
+        return true;
+    }
 
 }

@@ -49,7 +49,14 @@ public class FlightController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    //@GetMapping("/api/flights/{flightId}")
+    @GetMapping("/api/flights/{flightId}")
+    public ResponseEntity<Flight> retriveFlightById(@PathVariable long flightId){
+        Optional<Flight> optionalFlight = flightService.getFlightById(flightId);
+        if(!optionalFlight.isEmpty()){
+            return new ResponseEntity<>(optionalFlight.get(),HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 
     //@DeleteMapping("/api/flights/{flightId}")
 }
