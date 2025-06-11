@@ -26,9 +26,9 @@ public class FlightController {
     }
     
     @PostMapping("/api/flights")
-    public ResponseEntity<Flight> addFlight(@RequestBody Flight flight){
-        flight = flightService.createFlight(flight);
-        return new ResponseEntity<>(flight,HttpStatus.CREATED);
+    public Flight addFlight(@RequestBody Flight flight){
+        flightService.createFlight(flight);
+        return flight;
     }
 
     @PutMapping("/api/flights/{flightId}")

@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.examly.springapp.model.Flight;
 import com.examly.springapp.service.FlightService;
 
-@RestController
 public class TestController {
     FlightService flightService;
 
