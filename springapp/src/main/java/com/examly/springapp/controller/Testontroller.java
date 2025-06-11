@@ -34,7 +34,7 @@ public class Testontroller {
 
     @GetMapping("api/test/flights")
     public List<Flight> showFlights(){
-        return flightService.getFlights();
+        return flightService.getFlightsForPre();
     }
     
 }

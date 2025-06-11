@@ -30,7 +30,7 @@ public class FlightServiceImpl implements FlightService{
         flightList.add(f3);
     }
     
-    public List<Flight> getFlights(){
+    public List<Flight> getFlightsForPre(){
         return flightList;
     }
 
@@ -49,6 +49,9 @@ public class FlightServiceImpl implements FlightService{
         return optionalUpdated;
     }
 
-    
+    public List<Flight> getFlights(){
+        return flightList;
+    }
+
 
 }
