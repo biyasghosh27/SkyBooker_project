@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -51,12 +52,19 @@ public class FlightController {
 
     @GetMapping("/api/flights/{flightId}")
     public ResponseEntity<Flight> retriveFlightById(@PathVariable long flightId){
-        Optional<Flight> optionalFlight = flightService.getFlightById(flightId);
-        if(!optionalFlight.isEmpty()){
-            return new ResponseEntity<>(optionalFlight.get(),HttpStatus.OK);
+        Flight flight = flightService.getFlightById(flightId);
+        if(flight != null){
+            return new ResponseEntity<>(flight,HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    //@DeleteMapping("/api/flights/{flightId}")
+    @DeleteMapping("/api/flights/{flightId}")
+    public ResponseEntity<Flight> deleteFlightById(@PathVariable long flightId){
+        boolean value = flightService.removeFlight(flightId);
+        if(value){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
 }
