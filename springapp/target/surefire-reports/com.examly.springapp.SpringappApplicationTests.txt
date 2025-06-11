@@ -1,12 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: com.examly.springapp.SpringappApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 19, Failures: 9, Errors: 0, Skipped: 0, Time elapsed: 2.991 s <<< FAILURE! - in com.examly.springapp.SpringappApplicationTests
+Tests run: 19, Failures: 9, Errors: 0, Skipped: 0, Time elapsed: 2.91 s <<< FAILURE! - in com.examly.springapp.SpringappApplicationTests
 backend_day19_testBookingModelFileExists  Time elapsed: 0.006 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at com.examly.springapp.SpringappApplicationTests.backend_day19_testBookingModelFileExists(SpringappApplicationTests.java:161)
 
-backend_day19_testBookingRepoFileExists  Time elapsed: 0.002 s  <<< FAILURE!
+backend_day19_testBookingRepoFileExists  Time elapsed: 0.001 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at com.examly.springapp.SpringappApplicationTests.backend_day19_testBookingRepoFileExists(SpringappApplicationTests.java:172)
 
@@ -26,7 +26,7 @@ backend_day24_testControllerBooking  Time elapsed: 0.002 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at com.examly.springapp.SpringappApplicationTests.backend_day24_testControllerBooking(SpringappApplicationTests.java:236)
 
-backend_day24_testGetAllBookings  Time elapsed: 0.015 s  <<< FAILURE!
+backend_day24_testGetAllBookings  Time elapsed: 0.014 s  <<< FAILURE!
 java.lang.AssertionError: Status expected:<200> but was:<404>
 	at com.examly.springapp.SpringappApplicationTests.backend_day24_testGetAllBookings(SpringappApplicationTests.java:244)
 
