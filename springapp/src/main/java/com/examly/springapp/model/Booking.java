@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Booking {
@@ -13,6 +15,10 @@ public class Booking {
     private String bookingDate;
     private int numberOfPassengers;
     private String status;
+
+    @ManyToOne
+    @JoinColumn(name = "flightId")
+    private Flight flight;
     
     public long getBookingId() {
         return bookingId;
@@ -38,13 +44,20 @@ public class Booking {
     public void setStatus(String status) {
         this.status = status;
     }
-    public Booking(long bookingId, String bookingDate, int numberOfPassengers, String status) {
+    public Booking() {
+    }
+    public Flight getFlight() {
+        return flight;
+    }
+    public void setFlight(Flight flight) {
+        this.flight = flight;
+    }
+    public Booking(long bookingId, String bookingDate, int numberOfPassengers, String status, Flight flight) {
         this.bookingId = bookingId;
         this.bookingDate = bookingDate;
         this.numberOfPassengers = numberOfPassengers;
         this.status = status;
-    }
-    public Booking() {
+        this.flight = flight;
     }
 
     
