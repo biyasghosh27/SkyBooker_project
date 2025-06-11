@@ -74,7 +74,7 @@ public class Flight {
         this.totalSeats = totalSeats;
     }
     public Flight(long flightId, String flightNumber, String airline, String departureLocation, String arrivalLocation,
-            String departureTime, String arrivalTime, double price, int totalSeats) {
+        String departureTime, String arrivalTime, double price, int totalSeats) {
         this.flightId = flightId;
         this.flightNumber = flightNumber;
         this.airline = airline;

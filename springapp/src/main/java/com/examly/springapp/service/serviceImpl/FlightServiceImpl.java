@@ -19,7 +19,7 @@ public class FlightServiceImpl implements FlightService{
     FlightRepo flightRepo;
 
     List<Flight> flightListpre = new ArrayList<>();
-    List<Flight> flightList = new ArrayList<>();
+    //List<Flight> flightList = new ArrayList<>();
     
     public FlightServiceImpl(){
         Flight f1 = new Flight(1001,"123456","Indigo","Delhi","Mumbai","10:20 AM","4:30 PM",1200.0,60);
@@ -51,7 +51,7 @@ public class FlightServiceImpl implements FlightService{
     }
 
     public List<Flight> getFlights(){
-        return flightList;
+        return flightListpre;
     }
 
 
