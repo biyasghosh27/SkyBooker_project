@@ -42,7 +42,11 @@ public class FlightController {
 
     @GetMapping("/api/flights")
     public ResponseEntity<List<Flight>> retriveFlight(){
-        List<Flight> 
+        List<Flight> flightList = flightService.getFlights();
+        if(flightList != null){
+            return new ResponseEntity<>(flightList,HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     //@GetMapping("/api/flights/{flightId}")

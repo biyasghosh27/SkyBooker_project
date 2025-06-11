@@ -8,5 +8,5 @@ import com.examly.springapp.model.Flight;
 public interface FlightService {
     public List<Flight> getFlights();
     public Flight createFlight(Flight flight);
-    public Optional<Flight> updateFlight(int flightId, Flight flightDeatils);
+    public Optional<Flight> updateFlight(long flightId, Flight flightDeatils);
 }
