@@ -18,7 +18,7 @@ import com.examly.springapp.model.Flight;
 import com.examly.springapp.service.FlightService;
 
 @RestController
-public class Testontroller {
+public class TestController {
     FlightService flightService;
 
     @Autowired

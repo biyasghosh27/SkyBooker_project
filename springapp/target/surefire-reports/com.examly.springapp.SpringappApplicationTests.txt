@@ -1,16 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: com.examly.springapp.SpringappApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 19, Failures: 11, Errors: 0, Skipped: 0, Time elapsed: 2.899 s <<< FAILURE! - in com.examly.springapp.SpringappApplicationTests
-backend_day15_testControllerFileExists  Time elapsed: 0.007 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-	at com.examly.springapp.SpringappApplicationTests.backend_day15_testControllerFileExists(SpringappApplicationTests.java:54)
-
-backend_day17_testAddFlight  Time elapsed: 0.086 s  <<< FAILURE!
+Tests run: 19, Failures: 10, Errors: 0, Skipped: 0, Time elapsed: 2.84 s <<< FAILURE! - in com.examly.springapp.SpringappApplicationTests
+backend_day17_testAddFlight  Time elapsed: 0.096 s  <<< FAILURE!
 java.lang.AssertionError: Status expected:<200> but was:<201>
 	at com.examly.springapp.SpringappApplicationTests.backend_day17_testAddFlight(SpringappApplicationTests.java:129)
 
-backend_day19_testBookingModelFileExists  Time elapsed: 0.001 s  <<< FAILURE!
+backend_day19_testBookingModelFileExists  Time elapsed: 0.003 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at com.examly.springapp.SpringappApplicationTests.backend_day19_testBookingModelFileExists(SpringappApplicationTests.java:161)
 
@@ -22,7 +18,7 @@ backend_day20_testBookingHasManyToOneAnnotations  Time elapsed: 0.002 s  <<< FAI
 org.opentest4j.AssertionFailedError: Class not found: com.examly.springapp.model.Booking
 	at com.examly.springapp.SpringappApplicationTests.backend_day20_testBookingHasManyToOneAnnotations(SpringappApplicationTests.java:201)
 
-backend_day21_testBookingServiceInterfaceAndImplementation  Time elapsed: 0.002 s  <<< FAILURE!
+backend_day21_testBookingServiceInterfaceAndImplementation  Time elapsed: 0.001 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Interface or implementation not found: com.examly.springapp.service.BookingService
 	at com.examly.springapp.SpringappApplicationTests.backend_day21_testBookingServiceInterfaceAndImplementation(SpringappApplicationTests.java:215)
 
@@ -30,11 +26,11 @@ backend_day22_testExceptionFile  Time elapsed: 0.001 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at com.examly.springapp.SpringappApplicationTests.backend_day22_testExceptionFile(SpringappApplicationTests.java:226)
 
-backend_day24_testControllerBooking  Time elapsed: 0.001 s  <<< FAILURE!
+backend_day24_testControllerBooking  Time elapsed: 0.002 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at com.examly.springapp.SpringappApplicationTests.backend_day24_testControllerBooking(SpringappApplicationTests.java:236)
 
-backend_day24_testGetAllBookings  Time elapsed: 0.014 s  <<< FAILURE!
+backend_day24_testGetAllBookings  Time elapsed: 0.012 s  <<< FAILURE!
 java.lang.AssertionError: Status expected:<200> but was:<404>
 	at com.examly.springapp.SpringappApplicationTests.backend_day24_testGetAllBookings(SpringappApplicationTests.java:244)
 
