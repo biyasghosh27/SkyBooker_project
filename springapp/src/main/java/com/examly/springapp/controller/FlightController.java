@@ -60,11 +60,11 @@ public class FlightController {
     }
 
     @DeleteMapping("/api/flights/{flightId}")
-    public ResponseEntity<Flight> deleteFlightById(@PathVariable long flightId){
+    public ResponseEntity<Boolean> deleteFlightById(@PathVariable long flightId){
         boolean value = flightService.removeFlight(flightId);
         if(value){
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(true,HttpStatus.NO_CONTENT);
         }
-        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(false,HttpStatus.NOT_FOUND);
     }
 }
