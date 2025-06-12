@@ -45,6 +45,7 @@ public class BookingServiceImpl implements BookingService{
         b.setBookingDate(booking.getBookingDate());
         b.setFlight(booking.getFlight());
         b.setNumberOfPassengers(booking.getNumberOfPassengers());
+        b.setStatus(booking.getStatus());
         return bookingRepo.save(booking);
     }
     
