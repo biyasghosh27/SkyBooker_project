@@ -1,6 +1,7 @@
 package com.examly.springapp.service.serviceImpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,19 +22,25 @@ public class BookingServiceImpl implements BookingService{
 
     @Override
     public Booking getBookingById(long id) {
-        Optional<Booking> 
+        Optional<Booking> bop = bookingRepo.findById(id);
+        if(bop.isEmpty()){
+            return null;//exception throw
+        }
+        return bop.get();
     }
 
     @Override
     public List<Booking> getAllBookings() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllBookings'");
+        return bookingRepo.findAll();
     }
 
     @Override
     public Booking updateBooking(long id, Booking booking) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'updateBooking'");
+        Optional<Booking> bop = bookingRepo.findById(id);
+        if(bop.isEmpty()){
+            return null;//exception throw
+        }
+        return bookingRepo.save(booking);
     }
     
 }
