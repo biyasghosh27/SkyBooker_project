@@ -2,23 +2,26 @@ package com.examly.springapp.service.serviceImpl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.examly.springapp.model.Booking;
+import com.examly.springapp.repository.BookingRepo;
 import com.examly.springapp.service.BookingService;
 @Service
 public class BookingServiceImpl implements BookingService{
 
+    @Autowired
+    private BookingRepo bookingRepo;
+
     @Override
     public Booking createBooking(Booking booking) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'createBooking'");
+        return bookingRepo.save(booking);
     }
 
     @Override
     public Booking getBookingById(long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getBookingById'");
+        Optional<Booking> 
     }
 
     @Override
