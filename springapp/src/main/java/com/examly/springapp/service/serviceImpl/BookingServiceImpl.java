@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.examly.springapp.model.Booking;
 import com.examly.springapp.repository.BookingRepo;
 import com.examly.springapp.service.BookingService;
+
 @Service
 public class BookingServiceImpl implements BookingService{
 
@@ -40,6 +41,10 @@ public class BookingServiceImpl implements BookingService{
         if(bop.isEmpty()){
             return null;//exception throw
         }
+        Booking b = bop.get();
+        b.setBookingDate(booking.getBookingDate());
+        b.setFlight(booking.getFlight());
+        b.setNumberOfPassengers(booking.getNumberOfPassengers());
         return bookingRepo.save(booking);
     }
     
