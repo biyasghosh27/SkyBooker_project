@@ -6,7 +6,7 @@ import com.examly.springapp.model.Booking;
 
 public interface BookingService {
     Booking createBooking(Booking booking);
-    Booking getBookingById(long id);
+    Booking getBookingById(Long id);
     List<Booking> getAllBookings();
-    Booking updateBooking(long id, Booking booking);
+    Booking updateBooking(Long id, Booking booking);
 }

@@ -33,7 +33,7 @@ public class FlightController {
     }
 
     @PutMapping("/api/flights/{flightId}")
-    public ResponseEntity<Flight> modifyFlight(@PathVariable int flightId, @RequestBody Flight flight){
+    public ResponseEntity<Flight> modifyFlight(@PathVariable Long flightId, @RequestBody Flight flight){
         Optional<Flight> optionalFlight = flightService.updateFlight(flightId,flight);
         if(optionalFlight.isPresent()){
             return new ResponseEntity<>(optionalFlight.get(),HttpStatus.OK);
@@ -51,7 +51,7 @@ public class FlightController {
     }
 
     @GetMapping("/api/flights/{flightId}")
-    public ResponseEntity<Flight> retriveFlightById(@PathVariable long flightId){
+    public ResponseEntity<Flight> retriveFlightById(@PathVariable Long flightId){
         Flight flight = flightService.getFlightById(flightId);
         if(flight != null){
             return new ResponseEntity<>(flight,HttpStatus.OK);
@@ -60,7 +60,7 @@ public class FlightController {
     }
 
     @DeleteMapping("/api/flights/{flightId}")
-    public ResponseEntity<Boolean> deleteFlightById(@PathVariable long flightId){
+    public ResponseEntity<Boolean> deleteFlightById(@PathVariable Long flightId){
         boolean value = flightService.removeFlight(flightId);
         if(value){
             return new ResponseEntity<>(true,HttpStatus.NO_CONTENT);

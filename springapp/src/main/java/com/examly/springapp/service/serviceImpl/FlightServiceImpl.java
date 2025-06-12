@@ -22,9 +22,9 @@ public class FlightServiceImpl implements FlightService{
     //List<Flight> flightList = new ArrayList<>();
     
     public FlightServiceImpl(){
-        Flight f1 = new Flight(1001,"123456","Indigo","Delhi","Mumbai","10:20 AM","4:30 PM",1200.0,60);
-        Flight f2 = new Flight(1002,"234567","Air India","Kolkata","Dubai","4:00 AM","2:00 PM",2341.0,90);
-        Flight f3 = new Flight(1003,"345678","Emirates","Chennai","Bhubaneswar","8:00 PM","1:00 AM",900.67,120);
+        Flight f1 = new Flight((long)1,"123456","Indigo","Delhi","Mumbai","10:20 AM","4:30 PM",1200.0,60);
+        Flight f2 = new Flight((long)2,"234567","Air India","Kolkata","Dubai","4:00 AM","2:00 PM",2341.0,90);
+        Flight f3 = new Flight((long) 3,"345678","Emirates","Chennai","Bhubaneswar","8:00 PM","1:00 AM",900.67,120);
 
         flightListpre.add(f1);
         flightListpre.add(f2);
@@ -40,7 +40,7 @@ public class FlightServiceImpl implements FlightService{
         return flight;
     }
 
-    public Optional<Flight> updateFlight(long flightId, Flight flightDeatils){
+    public Optional<Flight> updateFlight(Long flightId, Flight flightDeatils){
         Optional<Flight> optionalFlight = flightRepo.findById(flightId);
         if(optionalFlight.isEmpty()){
            throw new RuntimeException("error"); 
@@ -54,7 +54,7 @@ public class FlightServiceImpl implements FlightService{
         return flightListpre;
     }
 
-    public Flight getFlightById(long flightId){
+    public Flight getFlightById(Long flightId){
         Optional<Flight> optionalFlight = flightRepo.findById(flightId);
         if(optionalFlight.isEmpty()){
             throw new RuntimeException("");
@@ -63,7 +63,7 @@ public class FlightServiceImpl implements FlightService{
         return flight;
     }
 
-    public boolean removeFlight(long flightId){
+    public boolean removeFlight(Long flightId){
         Optional<Flight> optionalFlight = flightRepo.findById(flightId); 
         if(optionalFlight.isEmpty()){
             return false;

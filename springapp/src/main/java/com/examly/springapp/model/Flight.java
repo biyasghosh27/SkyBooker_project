@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 public class Flight {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long flightId;
+    private Long flightId;
     private String flightNumber;
     private String airline;
     private String departureLocation;
@@ -19,10 +19,10 @@ public class Flight {
     private double price;
     private int totalSeats;
     
-    public long getFlightId() {
+    public Long getFlightId() {
         return flightId;
     }
-    public void setFlightId(long flightId) {
+    public void setFlightId(Long flightId) {
         this.flightId = flightId;
     }
     public String getFlightNumber() {
@@ -73,7 +73,7 @@ public class Flight {
     public void setTotalSeats(int totalSeats) {
         this.totalSeats = totalSeats;
     }
-    public Flight(long flightId, String flightNumber, String airline, String departureLocation, String arrivalLocation,
+    public Flight(Long flightId, String flightNumber, String airline, String departureLocation, String arrivalLocation,
         String departureTime, String arrivalTime, double price, int totalSeats) {
         this.flightId = flightId;
         this.flightNumber = flightNumber;

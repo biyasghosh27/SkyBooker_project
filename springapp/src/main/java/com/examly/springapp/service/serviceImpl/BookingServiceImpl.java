@@ -21,7 +21,7 @@ public class BookingServiceImpl implements BookingService{
     }
 
     @Override
-    public Booking getBookingById(long id) {
+    public Booking getBookingById(Long id) {
         Optional<Booking> bop = bookingRepo.findById(id);
         if(bop.isEmpty()){
             return null;//exception throw
@@ -35,7 +35,7 @@ public class BookingServiceImpl implements BookingService{
     }
 
     @Override
-    public Booking updateBooking(long id, Booking booking) {
+    public Booking updateBooking(Long id, Booking booking) {
         Optional<Booking> bop = bookingRepo.findById(id);
         if(bop.isEmpty()){
             return null;//exception throw

@@ -11,7 +11,7 @@ import jakarta.persistence.ManyToOne;
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long bookingId;
+    private Long bookingId;
     private String bookingDate;
     private int numberOfPassengers;
     private String status;
@@ -20,10 +20,10 @@ public class Booking {
     @JoinColumn(name = "flightId")
     private Flight flight;
     
-    public long getBookingId() {
+    public Long getBookingId() {
         return bookingId;
     }
-    public void setBookingId(long bookingId) {
+    public void setBookingId(Long bookingId) {
         this.bookingId = bookingId;
     }
     public String getBookingDate() {
@@ -52,7 +52,7 @@ public class Booking {
     public void setFlight(Flight flight) {
         this.flight = flight;
     }
-    public Booking(long bookingId, String bookingDate, int numberOfPassengers, String status, Flight flight) {
+    public Booking(Long bookingId, String bookingDate, int numberOfPassengers, String status, Flight flight) {
         this.bookingId = bookingId;
         this.bookingDate = bookingDate;
         this.numberOfPassengers = numberOfPassengers;
