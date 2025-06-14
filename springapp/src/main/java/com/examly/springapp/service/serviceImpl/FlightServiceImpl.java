@@ -43,7 +43,7 @@ public class FlightServiceImpl implements FlightService{
     public Optional<Flight> updateFlight(Long flightId, Flight flightDeatils){
         Optional<Flight> optionalFlight = flightRepo.findById(flightId);
         if(optionalFlight.isEmpty()){
-           throw new RuntimeException("error"); 
+           throw new RuntimeException(); 
         }
         Flight updatedFlight = flightRepo.save(flightDeatils);
         Optional<Flight> optionalUpdated = Optional.of(updatedFlight);
@@ -57,7 +57,7 @@ public class FlightServiceImpl implements FlightService{
     public Flight getFlightById(Long flightId){
         Optional<Flight> optionalFlight = flightRepo.findById(flightId);
         if(optionalFlight.isEmpty()){
-            throw new RuntimeException("");
+            throw new RuntimeException();
         }
         Flight flight = optionalFlight.get();
         return flight;
