@@ -25,7 +25,7 @@ public class BookingServiceImpl implements BookingService{
     public Booking getBookingById(Long id) {
         Optional<Booking> bop = bookingRepo.findById(id);
         if(bop.isEmpty()){
-            return null;//exception throw
+            throw new RuntimeException();
         }
         return bop.get();
     }
@@ -39,7 +39,7 @@ public class BookingServiceImpl implements BookingService{
     public Booking updateBooking(Long id, Booking booking) {
         Optional<Booking> bop = bookingRepo.findById(id);
         if(bop.isEmpty()){
-            return null;//exception throw
+            throw new RuntimeException();
         }
         Booking b = bop.get();
         b.setBookingDate(booking.getBookingDate());
