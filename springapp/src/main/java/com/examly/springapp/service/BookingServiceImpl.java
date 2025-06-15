@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.examly.springapp.exception.SeatsExceededException;
 import com.examly.springapp.model.Booking;
 import com.examly.springapp.repository.BookingRepo;
 
@@ -17,7 +18,12 @@ public class BookingServiceImpl implements BookingService{
 
     @Override
     public Booking createBooking(Booking booking) {
-        return bookingRepo.save(booking);
+        try{
+            return bookingRepo.save(booking);
+        }catch(SeatsExceededException e){
+
+        }
+        
     }
 
     @Override
