@@ -1,16 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: com.examly.springapp.SpringappApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 19, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 4.293 s <<< FAILURE! - in com.examly.springapp.SpringappApplicationTests
-backend_day22_testExceptionFile  Time elapsed: 0.007 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-	at com.examly.springapp.SpringappApplicationTests.backend_day22_testExceptionFile(SpringappApplicationTests.java:226)
-
-backend_day24_testControllerBooking  Time elapsed: 0.002 s  <<< FAILURE!
+Tests run: 19, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 4.523 s <<< FAILURE! - in com.examly.springapp.SpringappApplicationTests
+backend_day24_testControllerBooking  Time elapsed: 0.008 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at com.examly.springapp.SpringappApplicationTests.backend_day24_testControllerBooking(SpringappApplicationTests.java:236)
 
-backend_day24_testGetAllBookings  Time elapsed: 0.051 s  <<< FAILURE!
+backend_day24_testGetAllBookings  Time elapsed: 0.024 s  <<< FAILURE!
 java.lang.AssertionError: Status expected:<200> but was:<404>
 	at com.examly.springapp.SpringappApplicationTests.backend_day24_testGetAllBookings(SpringappApplicationTests.java:244)
 
@@ -18,7 +14,7 @@ backend_day25_testEntityUserFile  Time elapsed: 0 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at com.examly.springapp.SpringappApplicationTests.backend_day25_testEntityUserFile(SpringappApplicationTests.java:256)
 
-backend_day26_testCorsUserFile  Time elapsed: 0 s  <<< FAILURE!
+backend_day26_testCorsUserFile  Time elapsed: 0.003 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at com.examly.springapp.SpringappApplicationTests.backend_day26_testCorsUserFile(SpringappApplicationTests.java:266)
 
