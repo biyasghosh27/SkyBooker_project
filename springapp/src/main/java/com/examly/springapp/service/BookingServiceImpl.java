@@ -14,8 +14,12 @@ import com.examly.springapp.repository.BookingRepo;
 @Service
 public class BookingServiceImpl implements BookingService{
 
-    @Autowired
     private BookingRepo bookingRepo;
+
+    @Autowired
+    public void setBookingRepo(BookingRepo bookingRepo) {
+        this.bookingRepo = bookingRepo;
+    }
 
     @Override
     public Booking createBooking(Booking booking) {
