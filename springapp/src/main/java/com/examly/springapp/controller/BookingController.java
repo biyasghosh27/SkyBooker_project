@@ -55,5 +55,7 @@ public class BookingController {
         }
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
+
+    @GetMapping("bookings/")
     
 }
