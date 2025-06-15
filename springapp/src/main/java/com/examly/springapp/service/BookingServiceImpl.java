@@ -65,6 +65,11 @@ public class BookingServiceImpl implements BookingService{
         existing.setBookingDate(booking.getBookingDate());
         return bookingRepo.save(existing);
     }
+
+    @Override
+    public List<Booking> getBookingsByUserId(int userId) {
+        return bookingRepo.findByUserUserId(userId);
+    }
     
 
 

@@ -9,4 +9,5 @@ public interface BookingService {
     Booking getBookingById(Long id);
     List<Booking> getAllBookings();
     Booking updateBooking(Long id, Booking booking);
+    List<Booking> getBookingsByUserId(int userId);
 }

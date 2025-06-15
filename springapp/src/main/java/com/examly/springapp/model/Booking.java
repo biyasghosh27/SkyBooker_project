@@ -19,6 +19,7 @@ public class Booking {
     @ManyToOne
     @JoinColumn(name = "flightId")
     private Flight flight;
+    private User user;
     
     public Long getBookingId() {
         return bookingId;
@@ -44,20 +45,18 @@ public class Booking {
     public void setStatus(String status) {
         this.status = status;
     }
-    public Booking() {
-    }
+    
     public Flight getFlight() {
         return flight;
     }
     public void setFlight(Flight flight) {
         this.flight = flight;
     }
-    public Booking(Long bookingId, String bookingDate, int numberOfPassengers, String status, Flight flight) {
-        this.bookingId = bookingId;
-        this.bookingDate = bookingDate;
-        this.numberOfPassengers = numberOfPassengers;
-        this.status = status;
-        this.flight = flight;
+    public User getUser() {
+        return user;
+    }
+    public void setUser(User user) {
+        this.user = user;
     }
 
     
