@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.examly.springapp.exception.SeatsExceededException;
 import com.examly.springapp.model.Booking;
+import com.examly.springapp.model.Flight;
 import com.examly.springapp.repository.BookingRepo;
 
 @Service
@@ -18,19 +19,20 @@ public class BookingServiceImpl implements BookingService{
 
     @Override
     public Booking createBooking(Booking booking) {
-        try{
-            return bookingRepo.save(booking);
-        }catch(SeatsExceededException e){
-
-        }
-        
+       Flight flight = booking.getFlight();
+       int alreadyBooked = bookingRepo.countPassengersByFlight(flight);
+       int newPassengers = booking.getNumberOfPassengers();
+       if(alreadyBooked+newPassengers > flight.getTotalSeats()){
+        throw new SeatsExceededException("Booking failed. Only " + (flight.getTotalSeats()-alreadyBooked) + " seats are left");
+       }
+       return bookingRepo.save(booking);
     }
 
     @Override
     public Booking getBookingById(Long id) {
         Optional<Booking> bop = bookingRepo.findById(id);
         if(bop.isEmpty()){
-            throw new RuntimeException();
+            return null;
         }
         return bop.get();
     }
@@ -42,16 +44,34 @@ public class BookingServiceImpl implements BookingService{
 
     @Override
     public Booking updateBooking(Long id, Booking booking) {
-        Optional<Booking> bop = bookingRepo.findById(id);
-        if(bop.isEmpty()){
-            throw new RuntimeException();
+        Booking existing = bookingRepo.findById(id).orElse(null);
+        if(existing==null)return null;
+
+        Flight flight = existing.getFlight();
+
+        int totalBooked = bookingRepo.countPassengersByFlight(flight);
+        int oldCount = existing.getNumberOfPassengers();
+        int newCount = booking.getNumberOfPassengers();
+        int change = newCount - oldCount;
+        if(totalBooked+ change > flight.getTotalSeats()){
+            throw new SeatsExceededException("Cannot update. Only " + (flight.getTotalSeats()-totalBooked) + " additional seats available.");
         }
-        Booking b = bop.get();
-        b.setBookingDate(booking.getBookingDate());
-        b.setFlight(booking.getFlight());
-        b.setNumberOfPassengers(booking.getNumberOfPassengers());
-        b.setStatus(booking.getStatus());
-        return bookingRepo.save(b);
+        existing.setNumberOfPassengers(newCount);
+        existing.setStatus(booking.getStatus());
+        existing.setBookingDate(booking.getBookingDate());
+        return bookingRepo.save(existing);
     }
     
+
+
+    // Optional<Booking> bop = bookingRepo.findById(id);
+    //     if(bop.isEmpty()){
+    //         throw new RuntimeException();
+    //     }
+    //     Booking b = bop.get();
+    //     b.setBookingDate(booking.getBookingDate());
+    //     b.setFlight(booking.getFlight());
+    //     b.setNumberOfPassengers(booking.getNumberOfPassengers());
+    //     b.setStatus(booking.getStatus());
+    //     return bookingRepo.save(b);
 }
