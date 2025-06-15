@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.examly.springapp.model.User;
 import com.examly.springapp.service.UserService;
 
-@RestController
+//@RestController
 @RequestMapping("/api")
 public class AuthController {
     
-    @Autowired
+   // @Autowired
     private UserService userService;
 
     @PostMapping("/register")

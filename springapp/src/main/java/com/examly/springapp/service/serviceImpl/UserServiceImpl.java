@@ -9,10 +9,10 @@ import com.examly.springapp.model.User;
 import com.examly.springapp.repository.UserRepo;
 import com.examly.springapp.service.UserService;
 
-@Service
+//@Service
 public class UserServiceImpl implements UserService{
 
-    @Autowired
+    //@Autowired
     private UserRepo userRepo;
 
     @Override
