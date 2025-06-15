@@ -2,8 +2,8 @@
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/model/Flight.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/serviceImpl/BookingServiceImpl.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/serviceImpl/FlightServiceImpl.java
-/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/controller/FlightController.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/model/Booking.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/controller/FlightController.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/BookingService.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/repository/BookingRepo.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/controller/TestController.java
