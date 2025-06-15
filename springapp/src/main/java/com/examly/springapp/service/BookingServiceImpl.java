@@ -1,4 +1,4 @@
-package com.examly.springapp.service.serviceImpl;
+package com.examly.springapp.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.examly.springapp.model.Booking;
 import com.examly.springapp.repository.BookingRepo;
-import com.examly.springapp.service.BookingService;
 
 @Service
 public class BookingServiceImpl implements BookingService{
