@@ -44,9 +44,9 @@ public class BookingController {
     @GetMapping("/api/bookings")
     public ResponseEntity<List<Booking>> getAllBooking(){
         List<Booking> blist = bookingService.getAllBookings();
-        if(blist.isEmpty()){
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        // if(blist.isEmpty()){
+        //     return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        // }
         return new ResponseEntity<>(blist,HttpStatus.OK);
     }
 
