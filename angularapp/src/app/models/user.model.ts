@@ -1,5 +1,5 @@
 interface User{
-    userId?:number;
+    userId:number;
     email:string;
     password:string;
     username:string;
