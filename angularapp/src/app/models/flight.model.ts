@@ -1,4 +1,4 @@
-export interface Flight{
+export class Flight{
 
 flightId?:number;
 flightNumber:string;
