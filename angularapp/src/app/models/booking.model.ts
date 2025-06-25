@@ -1,4 +1,4 @@
-export class Book {
+export interface Booking {
 
     bookingId?:string;
     flightId?:number;
