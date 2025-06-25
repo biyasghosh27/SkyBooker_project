@@ -6,9 +6,6 @@ import java.util.List;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.CascadeType;
-import fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Id;
 import com.examly.springapp.model.*;
 
@@ -24,10 +21,9 @@ public class User {
     private String mobileNumber;
     private String userRole;
     
-    @OneToMany(mappedBy = "user",cascade=CascadeType.ALL)
-    @JsonIgnore
-    private List<Booking> bookings = new ArrayList<>();
-
+    // @OneToMany(mappedBy = "user",cascade=CascadeType.ALL)
+    // @JsonIgnore
+    // private List<Booking> bookings = new ArrayList<>();
     
     public int getUserId() {
         return userId;
@@ -65,6 +61,12 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+    // public List<Booking> getBookings() {
+    //     return bookings;
+    // }
+    // public void setBookings(List<Booking> bookings) {
+    //     this.bookings = bookings;
+    // }
 
     
 }

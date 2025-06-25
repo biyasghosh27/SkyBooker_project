@@ -66,10 +66,10 @@ public class BookingServiceImpl implements BookingService{
         return bookingRepo.save(existing);
     }
 
-    @Override
-    public List<Booking> getBookingsByUserId(int userId) {
-        return bookingRepo.findByUserUserId(userId);
-    }
+    // @Override
+    // public List<Booking> getBookingsByUserId(int userId) {
+    //     return bookingRepo.findByUserUserId(userId);
+    // }
     
 
 
