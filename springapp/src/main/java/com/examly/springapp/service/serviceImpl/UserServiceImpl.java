@@ -1,4 +1,4 @@
-// package com.examly.springapp.service.serviceImpl;
+package com.examly.springapp.service.serviceImpl;
 
 import java.util.List;
 
