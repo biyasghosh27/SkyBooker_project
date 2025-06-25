@@ -6,7 +6,11 @@ import java.util.List;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.CascadeType;
+import fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Id;
+import com.examly.springapp.model.*;
 
 @Entity
 public class User {
@@ -20,7 +24,7 @@ public class User {
     private String mobileNumber;
     private String userRole;
     
-    @OneToMany(mappedBy = 'user',cascade=CascadeType.ALL);
+    @OneToMany(mappedBy = "user",cascade=CascadeType.ALL)
     @JsonIgnore
     private List<Booking> bookings = new ArrayList<>();
 
