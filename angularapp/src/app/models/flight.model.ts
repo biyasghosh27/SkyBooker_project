@@ -1,4 +1,3 @@
-
 export interface Flight{
 
     flightId?:number;
@@ -10,5 +9,6 @@ export interface Flight{
     arrivalTime:string;
     price:number;
     
-    
-    }
+}
+
+module.exports = ""
