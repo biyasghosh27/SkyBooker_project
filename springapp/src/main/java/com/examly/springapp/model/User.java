@@ -1,5 +1,8 @@
 package com.examly.springapp.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,6 +20,10 @@ public class User {
     private String mobileNumber;
     private String userRole;
     
+    @OneToMany(mappedBy = 'user',cascade=CascadeType.ALL);
+    @JsonIgnore
+    private List<Booking> bookings = new ArrayList<>();
+
     
     public int getUserId() {
         return userId;
