@@ -1,4 +1,4 @@
-interface Booking {
+export interface Booking {
 
     bookingId?:string;
     flightId?:number;
@@ -8,5 +8,3 @@ interface Booking {
     status?:string;
 
 }
-
-module.exports = "Booking";

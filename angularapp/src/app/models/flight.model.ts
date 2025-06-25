@@ -10,5 +10,3 @@ export interface Flight{
     price:number;
     
 }
-
-module.exports = ""
