@@ -13,3 +13,4 @@ public interface FlightService {
     public Flight getFlightById(Long flightId);
     public boolean removeFlight(Long flightId);
 }
+

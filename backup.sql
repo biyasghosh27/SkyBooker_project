@@ -37,9 +37,12 @@ CREATE TABLE `booking` (
   `number_of_passengers` int(11) NOT NULL,
   `status` varchar(255) DEFAULT NULL,
   `flight_id` bigint(20) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`booking_id`),
   KEY `FK546eybei9q7dsna94vryofrbr` (`flight_id`),
-  CONSTRAINT `FK546eybei9q7dsna94vryofrbr` FOREIGN KEY (`flight_id`) REFERENCES `flight` (`flight_id`)
+  KEY `FKkgseyy7t56x7lkjgu3wah5s3t` (`user_id`),
+  CONSTRAINT `FK546eybei9q7dsna94vryofrbr` FOREIGN KEY (`flight_id`) REFERENCES `flight` (`flight_id`),
+  CONSTRAINT `FKkgseyy7t56x7lkjgu3wah5s3t` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -119,4 +122,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-29 11:38:06
+-- Dump completed on 2025-06-29 11:53:07

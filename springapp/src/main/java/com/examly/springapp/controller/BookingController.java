@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.examly.springapp.model.Booking;
 import com.examly.springapp.service.BookingService;
-import com.examly.springapp.service.BookingServiceImpl;
 
 @RestController
 public class BookingController {
@@ -56,9 +55,9 @@ public class BookingController {
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
-    // @GetMapping("bookings/user/{userId}")
-    // public List<Booking> getBookingsByUserId(@PathVariable int userId){
-    //     return bookingService.getBookingsByUserId(userId);
-    // }
+    @GetMapping("api/bookings/user/{userId}")
+    public List<Booking> getBookingsByUserId(@PathVariable int userId){
+        return bookingService.getBookingsByUserId(userId);
+    }
     
 }

@@ -19,6 +19,9 @@ public class Booking {
     @ManyToOne
     @JoinColumn(name = "flightId")
     private Flight flight;
+
+    @ManyToOne
+    @JoinColumn(name = "userId")
     private User user;
     
     public Long getBookingId() {

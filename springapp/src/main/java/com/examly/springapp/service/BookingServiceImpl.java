@@ -71,16 +71,4 @@ public class BookingServiceImpl implements BookingService{
         return bookingRepo.findByUserUserId(userId);
     }
     
-
-
-    // Optional<Booking> bop = bookingRepo.findById(id);
-    //     if(bop.isEmpty()){
-    //         throw new RuntimeException();
-    //     }
-    //     Booking b = bop.get();
-    //     b.setBookingDate(booking.getBookingDate());
-    //     b.setFlight(booking.getFlight());
-    //     b.setNumberOfPassengers(booking.getNumberOfPassengers());
-    //     b.setStatus(booking.getStatus());
-    //     return bookingRepo.save(b);
 }

@@ -8,12 +8,12 @@
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/exception/SeatsExceededException.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/BookingServiceImpl.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/controller/AuthController.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/serviceImpl/FlightServiceImpl.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/model/Booking.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/controller/FlightController.java
-/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/serviceImpl/FlightServiceImpl.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/BookingService.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/model/User.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/controller/TestController.java
-/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/repository/FlightRepo.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/UserService.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/repository/FlightRepo.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/repository/UserRepo.java
