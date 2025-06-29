@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Booking } from 'src/app/models/booking.model';
 
 @Component({
   selector: 'app-manage-booking',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManageBookingComponent implements OnInit {
 
+  bookings:Booking[] = [];
+  errorMessage:string = '';
+
   constructor() { }
 
   ngOnInit(): void {
+    this.loadBookings();
+  }
+
+  loadBookings(){
+    
+  }
+
+  updateBookingStatus(bookingId:number, status:string){
+
   }
 
 }

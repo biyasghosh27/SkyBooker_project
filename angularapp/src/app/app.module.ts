@@ -7,6 +7,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
 import { FlightListComponent } from './components/flight-list/flight-list.component';
 import { ManageBookingComponent } from './components/manage-booking/manage-booking.component';
+import { AddFlightComponent } from './components/add-flight/add-flight.component';
+import { MyHistoryComponent } from './components/my-history/my-history.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { ManageBookingComponent } from './components/manage-booking/manage-booki
     HomeComponent,
     ErrorComponent,
     FlightListComponent,
-    ManageBookingComponent
+    ManageBookingComponent,
+    AddFlightComponent,
+    MyHistoryComponent
   ],
   imports: [
     BrowserModule,

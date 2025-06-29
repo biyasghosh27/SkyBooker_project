@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Flight } from 'src/app/models/flight.model';
 
 @Component({
   selector: 'app-flight-list',
@@ -7,9 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FlightListComponent implements OnInit {
 
+  flights:Flight[] = [];
+  errorMessage:string = '';
+  userRole:string = '';
+
   constructor() { }
 
   ngOnInit(): void {
+    this.loadFlights();
   }
 
+  loadFlights(){
+    return this.flights;
+  }
+
+  updateFlight(id:number){
+
+  }
+
+  deleteFlight(id:number){
+
+  }
+
+  navigateToBooking(flightId:number){
+    
+  }
 }
