@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
+import { FlightListComponent } from './components/flight-list/flight-list.component';
+import { ManageBookingComponent } from './components/manage-booking/manage-booking.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    FlightListComponent,
+    ManageBookingComponent
   ],
   imports: [
     BrowserModule,
