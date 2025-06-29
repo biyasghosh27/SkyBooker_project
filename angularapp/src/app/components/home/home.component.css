@@ -1,6 +1,6 @@
 .navbar{
-    background-color: #3f72af;
-    color: white;
+    background-color: #c1efc6;
+    color: #cf2a46;
     padding: 15px 30px;
     display: flex;
     justify-content: space-between;
@@ -13,18 +13,20 @@
 }
 
 .nav-links a{
-    color: white;
+    color:  #cf2a46;
     text-decoration: none;
     margin-left: 20px;
     font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-.nav-links:hover{
+.nav-links a:hover{
+    color: white;
     text-decoration: underline;
 }
 
 .home-background{
-    background-image: url('https://i.pinimg.com/736x/db/d7/65/dbd7657550f6c3e8d23b6f869ca3b94a.jpg');
+    background-image: url('https://img.freepik.com/free-photo/comic-style-airplane-illustration_23-2151813588.jpg?semt=ais_hybrid&w=740');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -37,7 +39,7 @@
 }
 
 .home-card{
-    background-color: rgba(255,255,255,0.9);
+    background-color: rgba(255,255,255,0.8);
     padding: 30px;
     max-width: 700px;
     border-radius: 10px;
@@ -46,7 +48,7 @@
 }
 
 .home-card h2{
-    color: #3f72af;
+    color: #cf2a46;
     margin-bottom: 15px;
 }
 
