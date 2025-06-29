@@ -3,10 +3,12 @@ package com.examly.springapp.config;
 import java.util.Date;
 
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
+@Component
 public class JwtUtils {
     private final String jwtSecret = "SECRET_KEY";
     private final int jwtExpirationMs = 86400000;
