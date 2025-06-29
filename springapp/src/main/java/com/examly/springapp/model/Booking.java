@@ -19,7 +19,7 @@ public class Booking {
     @ManyToOne
     @JoinColumn(name = "flightId")
     private Flight flight;
-    // private User user;
+    private User user;
     
     public Long getBookingId() {
         return bookingId;
@@ -52,12 +52,11 @@ public class Booking {
     public void setFlight(Flight flight) {
         this.flight = flight;
     }
-    // public User getUser() {
-    //     return user;
-    // }
-    // public void setUser(User user) {
-    //     this.user = user;
-    // }
-
+    public User getUser() {
+        return user;
+    }
+    public void setUser(User user) {
+        this.user = user;
+    }
     
 }
