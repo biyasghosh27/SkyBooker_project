@@ -1,7 +1,7 @@
 com/examly/springapp/SpringappApplication.class
 com/examly/springapp/service/serviceImpl/FlightServiceImpl.class
-com/examly/springapp/model/Booking.class
 com/examly/springapp/service/BookingService.class
+com/examly/springapp/model/Booking.class
 com/examly/springapp/service/BookingServiceImpl.class
 com/examly/springapp/config/CorsConfig.class
 com/examly/springapp/controller/BookingController.class
