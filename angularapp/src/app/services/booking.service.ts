@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class BookingService {
 
-  public baseUrl = 'http://localhost:8080/api';
+  public baseUrl = 'https://8080-afbbeccaabcfe328808123edccecfbdeone.project.examly.io/api';
 
   constructor(private http:HttpClient) { }
 

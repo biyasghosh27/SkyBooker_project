@@ -101,7 +101,7 @@ CREATE TABLE `user` (
   `user_role` varchar(255) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -110,7 +110,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (3,'biyas@example.com','9876543210','$2a$10$vdCldw1Eu1KeVNI.ExacheaHoAT3r.EpflEh.m0nzInPv6TWPa5qi','Traveller','bgfh'),(4,'biyassfqwe@example.com','9876543210','$2a$10$YTmDY/U5gjnnM9D9RutV3ujSNs6.ZkZ/qwM10NLDkG0wmeetlWtAm','Traveller','bgfh'),(5,'demo@example.com','9876543210','$2a$10$1ORdKEFDLXTUhzqQCpHR0.b87K0xKy/7QxK/WjPJZJgcmb5ouXuuW','Traveller','demoUser'),(6,'demo@example.com','9876543210','$2a$10$YL7FF5vkAYpaM/38liAB1ePRO1smYulqfBPLClYBVANK6H0P5S6AS','Traveller','demoUser'),(7,'dem32o@example.com','987632543210','$2a$10$yF6r5NJJsbaJ9N9FWzdP3.0S3BxaPYmnZG25..7BxoqtoWP9rkr1C','Traveller','demo32User');
+INSERT INTO `user` VALUES (3,'biyas@example.com','9876543210','$2a$10$vdCldw1Eu1KeVNI.ExacheaHoAT3r.EpflEh.m0nzInPv6TWPa5qi','Traveller','bgfh'),(4,'biyassfqwe@example.com','9876543210','$2a$10$YTmDY/U5gjnnM9D9RutV3ujSNs6.ZkZ/qwM10NLDkG0wmeetlWtAm','Traveller','bgfh'),(5,'demo@example.com','9876543210','$2a$10$1ORdKEFDLXTUhzqQCpHR0.b87K0xKy/7QxK/WjPJZJgcmb5ouXuuW','Traveller','demoUser'),(6,'demo@example.com','9876543210','$2a$10$YL7FF5vkAYpaM/38liAB1ePRO1smYulqfBPLClYBVANK6H0P5S6AS','Traveller','demoUser'),(7,'dem32o@example.com','987632543210','$2a$10$yF6r5NJJsbaJ9N9FWzdP3.0S3BxaPYmnZG25..7BxoqtoWP9rkr1C','Traveller','demo32User'),(8,'demo@example.com','8240115019','$2a$10$qQvU5hmWQQ/3JG2CCA9CUevBPwZM6sr1aQsvvTKfXoKbQTAdSQH/y','Traveller','biyasghosh'),(9,'demo@example.com','8240115019','$2a$10$nCojpboLCIiXv665QUM9husYSZt3moqraYB7AEIlTjn6FczFpeGlC','Traveller','biyasghosh');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -123,4 +123,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-07-03 19:52:00
+-- Dump completed on 2025-07-03 20:06:54

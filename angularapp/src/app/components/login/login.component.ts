@@ -17,6 +17,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  //TESTING
+  // console.log("trying to log in with ", this.user);
+  
   login():void{
     const credentials = {
       email:this.email,
