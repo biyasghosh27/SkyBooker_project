@@ -25,6 +25,21 @@ export class AuthService {
 
   storeAuthData(token:string,userId:number,userRole:string):void{
     localStorage.setItem('token',token);
-    localStorage.setItem('userId',userId)
+    localStorage.setItem('userId',userId.toString());
+    localStorage.setItem('userRole',userRole);
+    this.userRole.next(userRole);
+    this.userId.next(userId);
+    this.token.next(token);
+  }
+
+  logout():void{
+    localStorage.clear();
+    this.userRole.next(null);
+    this.userId.next(null);
+    this.token.next(null);
+  }
+
+  getToken():string | null{
+    
   }
 }
