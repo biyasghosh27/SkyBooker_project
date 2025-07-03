@@ -40,6 +40,22 @@ export class AuthService {
   }
 
   getToken():string | null{
-    
+    return this.token.value;
+  }
+
+  isAdmin():boolean{
+    return this.userRole.value === 'Admin';
+  }
+
+  isTraveller():boolean{
+    return this.userRole.value === 'Traveller';
+  }
+
+  getUserId():number | null{
+    return this.userId.value;
+  }
+
+  getUserRole():string | null{
+    return this.userRole.value;
   }
 }
