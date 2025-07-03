@@ -11,6 +11,7 @@ import { AddFlightComponent } from './components/add-flight/add-flight.component
 import { MyHistoryComponent } from './components/my-history/my-history.component';
 import { BookingFormComponent } from './components/booking-form/booking-form.component';
 import { LoginComponent } from './components/login/login.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LoginComponent } from './components/login/login.component';
     AddFlightComponent,
     MyHistoryComponent,
     BookingFormComponent,
-    LoginComponent
+    LoginComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
