@@ -1,13 +1,27 @@
-<div class="add-flight">
+<div class="center-card">
 <h2>{{isEditing ? 'Update Flight' : 'Add Flight'}}</h2>
 <form (ngSubmit)="addOrUpdateFlight()" #flightForm="ngForm">
     <input type="text" name="flightNumber" [(ngModel)]="flight.flightNumber" placeholder="Flight Number" required/>
+    <br><br>
     <input type="text" name="airline" [(ngModel)]="flight.airline" placeholder="Airline" required/>
+    <br><br>
     <input type="text" name="departureLocation" [(ngModel)]="flight.departureLocation" placeholder="From" required/>
+    <br><br>
     <input type="text" name="arrivalLocation" [(ngModel)]="flight.arrivalLocation" placeholder="To" required/>
-    <input type="" name="departureTime" [(ngModel)]="flight.departureTime" placeholder="Departure Time" required/>
-    <input type="" name="arrivalTime" [(ngModel)]="flight.arrivalTime" placeholder="Arrival Time" required/>
-    <input type="number" name="price" [(ngModel)]="flight.price" placeholder=""
-    <button>Add Flight</button>
+    <br><br>
+    <input type="datetime-local" name="departureTime" [(ngModel)]="flight.departureTime" placeholder="Departure Time" required/>
+    <br><br>
+    <input type="datetime-local" name="arrivalTime" [(ngModel)]="flight.arrivalTime" placeholder="Arrival Time" required/>
+    <br><br>
+    <input type="number" name="price" [(ngModel)]="flight.price" placeholder="Price" required/>
+    <br><br>
+    <input type="number" name="totalSeats" [(ngModel)]="flight.totalSeats" placeholder="Total Seats" required/>
+    <br><br>
+    <button type="submit" [disabled]="flightForm.invalid">{{isEditing ? 'Update Flight' : 'Add Flight'}}</button>
 </form>
+<div *ngIf="successMessage">
+    <p>{{successMessage}}</p>
+    <button (click)="closeModal()">Close</button>
+</div>
+<p *ngIf="errorMessage">{{errorMessage}}</p>
 </div>

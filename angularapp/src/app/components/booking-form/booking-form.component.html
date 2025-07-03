@@ -1,1 +1,13 @@
-<p>booking-form works!</p>
+<div class="booking-form">
+    <h2>Book Your Flight</h2>
+    <form (ngSubmit)="submitBooking()" #bookingForm="ngForm">
+        <label>Number of Passengers</label>
+        <input type="number" name="numberOfPassengers" [(ngModel)]="booking.numberOfPassengers" required min="1"/>
+        <br><br>
+        <button type="submit" [disabled]="bookingForm.invalid">Submit Booking</button>
+    </form>
+    <div *ngIf="successMessage">
+    <p>{{successMessage}}</p>
+    </div>
+    <p *ngIf="errorMessage">{{errorMessage}}</p>
+</div>
