@@ -31,11 +31,11 @@ export class BookingService {
     return this.http.put(`${this.baseUrl}/bookings/${id}`,booking);
   }
 
-  deleteBooking(){
-
+  deleteBooking(id:number):Observable<any>{
+    return this.http.delete(`${this.baseUrl}/bookings/${id}`);
   }
 
-  updateBookingStatus(){
-    
+  updateBookingStatus(id:number,status:string):Observable<any>{  
+    return this.http.put(`${this.baseUrl}/bookings/${id}`,{status});
   }
 }
