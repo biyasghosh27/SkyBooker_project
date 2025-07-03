@@ -31,10 +31,10 @@ public class SecurityConfig {
         .requestMatchers(
             "/api/login",
             "/api/register",
-            "/api/test/**",
-            "/api/flights/**",
-            "/swagger-ui/**",
-            "/v3/api-docs/**"
+            "/api/test/**"
+            // "/api/flights/**",
+            // "/swagger-ui/**",
+            // "/v3/api-docs/**"
         ).permitAll()
         .anyRequest().authenticated()
         )
@@ -59,6 +59,7 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
+    @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception{
         return config.getAuthenticationManager();
     }
