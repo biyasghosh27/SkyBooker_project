@@ -18,7 +18,13 @@ export class NavbarComponent implements OnInit {
   constructor(private router:Router, private authService:AuthService) { }
 
   ngOnInit(): void {
-    
+    this.isLoggedIn = this.authService.isLoggedIn();
+    this.userRole = localStorage.getItem('userRole')||'';
+    this.userName = localStorage.getItem('username')||'';
+  }
+
+  toggleDropdown():void"{
+    showDr
   }
 
 }
