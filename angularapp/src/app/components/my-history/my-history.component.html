@@ -1,1 +1,14 @@
-<p>my-history works!</p>
+<div class="my-history">
+    <h2>My Booking History</h2>
+    <p *ngIf="errorMessage">{{errorMessage}}</p>
+    <p *ngIf="bookings.length === 0">No bookings found.</p>
+    <ul *ngIf="bookings.length > 0">
+    <li *ngFor="let b of bookings">
+        <p>Booking ID: {{b.bookingId}}</p>
+        <p>Flight Number: {{b.flight.flightNumber}}</p>
+        <p>Date: {{b.bookingDate | date}}</p>
+        <p>Status: {{b.status}}</p>
+        <hr/>
+    </li>
+    </ul>
+</div>
