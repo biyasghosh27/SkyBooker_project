@@ -1,34 +1,13 @@
-<div>
-<h3>Add Flight</h3>
-<form>
-    <label>Flight Number*</label>
-    <br>
-    <input type="text">
-    <br>
-    <label>Airline*</label>
-    <br>
-    <input type="text">
-    <br>
-    <label>Departure Location*</label>
-    <br>
-    <input type="text">
-    <br>
-    <label>Arrival Location*</label>
-    <br>
-    <input type="text">
-    <br>
-    <label>Departure Time*</label>
-    <br>
-    <input type="time">
-    <br>
-    <label>Arrival Time*</label>
-    <br>
-    <input type="time">
-    <br>
-    <label>Price*</label>
-    <br>
-    <input type="number">
-    <br>
+<div class="add-flight">
+<h2>{{isEditing ? 'Update Flight' : 'Add Flight'}}</h2>
+<form (ngSubmit)="addOrUpdateFlight()" #flightForm="ngForm">
+    <input type="text" name="flightNumber" [(ngModel)]="flight.flightNumber" placeholder="Flight Number" required/>
+    <input type="text" name="airline" [(ngModel)]="flight.airline" placeholder="Airline" required/>
+    <input type="text" name="departureLocation" [(ngModel)]="flight.departureLocation" placeholder="From" required/>
+    <input type="text" name="arrivalLocation" [(ngModel)]="flight.arrivalLocation" placeholder="To" required/>
+    <input type="" name="departureTime" [(ngModel)]="flight.departureTime" placeholder="Departure Time" required/>
+    <input type="" name="arrivalTime" [(ngModel)]="flight.arrivalTime" placeholder="Arrival Time" required/>
+    <input type="number" name="price" [(ngModel)]="flight.price" placeholder=""
     <button>Add Flight</button>
 </form>
 </div>
