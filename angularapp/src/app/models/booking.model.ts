@@ -1,10 +1,10 @@
 export interface Booking {
 
     bookingId?:string;
-    flightId?:number;
-    userId?:number;
+    flightId?:number;//ref to flight model
+    userId?:number;//ref to user model
     bookingDate?:Date;
     numberOfPassengers?:number;
-    status?:string;
+    status?:string;//CONFIRMED, CANCELED
 
 }
