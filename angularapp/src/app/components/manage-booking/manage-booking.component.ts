@@ -17,11 +17,11 @@ export class ManageBookingComponent implements OnInit {
     this.loadBookings();
   }
 
-  loadBookings(){
+  loadBookings():void{
     
   }
 
-  updateBookingStatus(bookingId:number, status:string){
+  updateBookingStatus(bookingId:number, status:string):void{
 
   }
 
