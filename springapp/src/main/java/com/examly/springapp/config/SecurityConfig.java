@@ -13,12 +13,27 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
+    private final JwtAuthenticationFilter jwtAuthFilter;
+    
+    private final ProjectUserDetailsService userDetailsService;
+
+    private final JwtAuthenticationEntryPoint authEntryPoint;
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         http.csrf(csrf->csrf.disable())
         .authorizeHttpRequests(auth->auth
-        .anyRequest().permitAll()
+        .requestMatchers(
+            "/api/login",
+            "/api/register",
+            "/api/test/**",
+            "/api/flights/**",
+            "/swagger-ui/**",
+            "/v3/api-docs/**"
+        ).permitAll()
+        .anyRequest().authenticated()
         )
+        .exceptionHandling(ex -> ex.aut)
         .httpBasic();
         return http.build();
     }

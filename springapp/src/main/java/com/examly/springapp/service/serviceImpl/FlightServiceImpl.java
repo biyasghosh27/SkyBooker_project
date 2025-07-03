@@ -18,25 +18,26 @@ public class FlightServiceImpl implements FlightService{
     @Autowired
     FlightRepo flightRepo;
 
-    List<Flight> flightListpre = new ArrayList<>();
-    //List<Flight> flightList = new ArrayList<>();
+    // List<Flight> flightListpre = new ArrayList<>();
+    List<Flight> flightList = new ArrayList<>();
     
     public FlightServiceImpl(){
         Flight f1 = new Flight((long)1,"123456","Indigo","Delhi","Mumbai","10:20 AM","4:30 PM",1200.0,60);
         Flight f2 = new Flight((long)2,"234567","Air India","Kolkata","Dubai","4:00 AM","2:00 PM",2341.0,90);
         Flight f3 = new Flight((long) 3,"345678","Emirates","Chennai","Bhubaneswar","8:00 PM","1:00 AM",900.67,120);
 
-        flightListpre.add(f1);
-        flightListpre.add(f2);
-        flightListpre.add(f3);
+        flightList.add(f1);
+        flightList.add(f2);
+        flightList.add(f3);
     }
     
     public List<Flight> getFlightsForPre(){
-        return flightListpre;
+        return flightList;
     }
 
     public Flight createFlight(Flight flight){
         flightRepo.save(flight);
+        flightList.add(flight);
         return flight;
     }
 
@@ -51,7 +52,7 @@ public class FlightServiceImpl implements FlightService{
     }
 
     public List<Flight> getFlights(){
-        return flightListpre;
+        return flightRepo.findAll();
     }
 
     public Flight getFlightById(Long flightId){
