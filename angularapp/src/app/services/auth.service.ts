@@ -31,7 +31,7 @@ export class AuthService {
     localStorage.setItem('token',token);
     localStorage.setItem('userId',userId.toString());
     localStorage.setItem('userRole',userRole);
-    localStorage.setItem('username',extractUsernameFromEmail());
+    localStorage.setItem('username',this.extractUsernameFromEmail());
   }
 
   //check login status
@@ -39,8 +39,16 @@ export class AuthService {
     return !!localStorage.getItem('token');
   }
   
-  getUserRole():string | null{
-    return this.userRole.value;
+  getUserRole():string{
+    return localStorage.getItem('userRole')||'';
+  }
+
+  getUserId():number{
+    return Number(localStorage.getItem('userId')||'0');
+  }
+
+  getToken():string{
+    return localStorage.getItem('token')||'';
   }
 
   //logout
@@ -49,20 +57,9 @@ export class AuthService {
     this.router.navigate(['/login']);
   }
 
-  getToken():string | null{
-    return this.token.value;
-  }
-
-  isAdmin():boolean{
-    return this.userRole.value === 'Admin';
-  }
-
-  isTraveller():boolean{
-    return this.userRole.value === 'Traveller';
-  }
-
-  getUserId():number | null{
-    return this.userId.value;
+  private extractUsernameFromEmail():string{
+    const email = localStorage.getItem('email');
+    return email ? email.split('@')[0]:'User';
   }
 
 }

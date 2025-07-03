@@ -1,8 +1,9 @@
-<div class="navbar">
-    <div class="logo" routerLink="/">SkyBooker</div>
-    <div class="nav-links">
-        <a routerLink="/register">Register</a>
-        <a routerLink="/login">Login</a>
-        <a routerLink="/">Home</a>
-    </div>
-</div>
+<nav class="navbar">
+    <h1><a routerLink="/" style="text-decoration: none; color: inherit;" class="logo">SkyBooker</a></h1>
+    <ul class="nav-links">
+        <!-- Unauthenticated -->
+        <ng-container *ngIf="!isLoggedIn">
+            <li><a routerLink=""</li>
+        </ng-container>
+    </ul>
+</nav>
