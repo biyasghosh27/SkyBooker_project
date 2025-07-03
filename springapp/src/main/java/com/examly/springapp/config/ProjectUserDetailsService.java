@@ -23,11 +23,11 @@ public class ProjectUserDetailsService implements UserDetailsService{
     }
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepo.findByUsername(username).orElseThrow(()->new 
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        User user = userRepo.findByEmail(email).orElseThrow(()->new 
         UsernameNotFoundException("User not found"));
         return new org.springframework.security.core.userdetails.User(
-            user.getUsername(),
+            user.getEmail(),
             user.getPassword(),
             Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + user.getUserRole()))
         );

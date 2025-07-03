@@ -15,7 +15,7 @@ public class JwtUtils {
 
     public String generateToken(UserDetails userdetails){
         return Jwts.builder()
-            .setSubject(userdetails.getUsername())
+            .setSubject(userdetails.getUsername())//it returns the email
             .setIssuedAt(new Date())
             .setExpiration(new Date(System.currentTimeMillis()+jwtExpirationMs))
             .signWith(SignatureAlgorithm.HS256, jwtSecret)
