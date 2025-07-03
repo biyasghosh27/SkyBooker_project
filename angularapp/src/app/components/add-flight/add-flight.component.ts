@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Flight } from 'src/app/models/flight.model';
 import { FlightService } from 'src/app/services/flight.service';
 
 @Component({
