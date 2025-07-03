@@ -4,19 +4,6 @@
     cursor: pointer;
 }
 
-.nav-links a{
-    color:  #cf2a46;
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover{
-    color: white;
-    text-decoration: underline;
-}
-
 .navbar{
     background-color: #c1efc6;
     color: #cf2a46;
@@ -24,4 +11,29 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links li{
+    cursor: pointer;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: #cf2a46;
+    font-weight: bold;
+}
+
+.dropdown-content{
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    margin-top: ;
 }

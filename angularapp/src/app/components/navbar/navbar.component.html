@@ -3,7 +3,39 @@
     <ul class="nav-links">
         <!-- Unauthenticated -->
         <ng-container *ngIf="!isLoggedIn">
-            <li><a routerLink=""</li>
+            <li><a routerLink="/register">Register</a></li>
+            <li><a routerLink="/login">Login</a></li>
+            <li><a routerLink="/home">Home</a></li>
+        </ng-container>
+        <!-- authenticated -->
+        <ng-container *ngIf="isLoggedIn">
+            <li><strong>{{ userName }}</strong>({{ userRole }})</li>
+            <li><a routerLink="/home">Home</a></li>
+            <!-- Admin only link -->
+            <ng-container *ngIf="userRole === 'Admin'">
+                <li class="dropdown" (click)="toggleDropdown()">
+                    Manage Flights
+                    <ul *ngIf="showDropdown" class="dropdown-content">
+                    <li><a routerLink="/add-flight">Add Flight</a></li>
+                    <li><a routerLink="/flight-list">Manage Flights</a></li>
+                    </ul>
+                </li>
+                <li><a routerLink="/manage-booking">Manage Bookings</a></li>
+            </ng-container>
+            <!-- passenger only links -->
+            <ng-container *ngIf="userRole === 'Traveller'">
+                <li><a routerLink="/flight-list">Book Flight</a></li>
+                <li><a routerLink="/my-history">History</a></li>
+            </ng-container>
+            <!-- logout -->
+            <li><button (click)="confirmLogout()">Logout</button></li>
         </ng-container>
     </ul>
 </nav>
+
+<!-- logout confirmation popup -->
+<div *ngIf="showLogoutPopup" class="logout-popup">
+    <p>Are you sure you want to logout?</p>
+    <button (click)="logout()">Yes</button>
+    <button (click)="cancelLogout()">No</button>
+</div>
