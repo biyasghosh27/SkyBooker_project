@@ -25,6 +25,7 @@ public class UserServiceImpl implements UserService{
         return userRepo.save(user);
     }
 
+    //NOT USING THIS ONE ANYMORE CHANGED IT IN AUTHCONTROLLER
     @Override
     public User loginUser(User user) {
         return userRepo.findByEmailAndPassword(user.getEmail(), user.getPassword());
