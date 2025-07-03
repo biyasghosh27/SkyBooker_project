@@ -1,5 +1,6 @@
 package com.examly.springapp.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -18,11 +19,15 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
-    private final JwtAuthenticationFilter jwtAuthFilter = new JwtAuthenticationFilter();
-    
-    private final ProjectUserDetailsService puserDetailsService = new ProjectUserDetailsService();
 
-    private final JwtAuthenticationEntryPoint authEntryPoint = new JwtAuthenticationEntryPoint();
+    @Autowired
+    private JwtAuthenticationFilter jwtAuthFilter;
+    
+    @Autowired
+    private ProjectUserDetailsService puserDetailsService;
+
+    @Autowired
+    private JwtAuthenticationEntryPoint authEntryPoint;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{

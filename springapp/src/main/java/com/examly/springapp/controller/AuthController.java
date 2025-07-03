@@ -57,8 +57,7 @@ public class AuthController {
         String token = jwtUtils.generateToken(userDetails);
         User user = userRepo.findByEmail(loginRequest.getEmail()).get();//for userId and role
 
-        JwtAuthResponse response = new JwtAuthResponse(token,user.getUserId(),user.getUserRole());
-        return ResponseEntity.ok(response);
+        return ResponseEntity.ok(new JwtAuthResponse(token,user.getUserId(),user.getUserRole()));
     }
 
     @GetMapping("/user/{userId}")
