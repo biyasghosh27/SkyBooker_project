@@ -23,8 +23,25 @@ export class NavbarComponent implements OnInit {
     this.userName = localStorage.getItem('username')||'';
   }
 
-  toggleDropdown():void"{
-    showDr
+  toggleDropdown():void{
+    this.showDropdown = !this.showDropdown;
+  }
+
+  confirmLogout(){
+    this.showLogoutPopup = true;
+  }
+
+  cancelLogout(){
+    this.showLogoutPopup = false;
+  }
+
+  logout(){
+    this.authService.logout();
+    this.isLoggedIn = false;
+    this.userRole = '';
+    this.userName = '';
+    this.router.navigate(['/login']);
+    this.showLogoutPopup = false;
   }
 
 }
