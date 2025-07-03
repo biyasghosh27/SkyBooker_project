@@ -3,7 +3,7 @@ package com.examly.springapp.dto;
 public class JwtAuthResponse {
     private String token;
     private int userId;
-    private String role;
+    private String userRole;
     
     public String getToken() {
         return token;
@@ -17,19 +17,19 @@ public class JwtAuthResponse {
     public void setUserId(int userId) {
         this.userId = userId;
     }
-    public String getRole() {
-        return role;
-    }
-    public void setRole(String role) {
-        this.role = role;
-    }
     
-    public JwtAuthResponse(String token, int userId, String role) {
+    public JwtAuthResponse(String token, int userId, String userRole) {
         this.token = token;
         this.userId = userId;
-        this.role = role;
+        this.userRole = userRole;
     }
     public JwtAuthResponse() {
+    }
+    public String getUserRole() {
+        return userRole;
+    }
+    public void setUserRole(String userRole) {
+        this.userRole = userRole;
     }
 
 
