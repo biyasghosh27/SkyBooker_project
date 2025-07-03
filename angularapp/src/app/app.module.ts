@@ -12,6 +12,7 @@ import { MyHistoryComponent } from './components/my-history/my-history.component
 import { BookingFormComponent } from './components/booking-form/booking-form.component';
 import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     MyHistoryComponent,
     BookingFormComponent,
     LoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
