@@ -11,7 +11,7 @@ import { FlightService } from 'src/app/services/flight.service';
 })
 export class FlightListComponent implements OnInit {
 
-  flights:Flight[] = [];
+  flights:Flight[];
   errorMessage:string = '';
   userRole:string = '';
 

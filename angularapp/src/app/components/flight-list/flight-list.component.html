@@ -1,1 +1,37 @@
-<p>flight-list works!</p>
+<div class="flight-list">
+    <h2>Available Flights</h2>
+    <p *ngIf="errorMessage">{{errorMessage}}</p>
+    <p *ngIf="flights.length===0">No flights available.</p>
+    <table *ngIf="flights.length > 0">
+        <thead>
+            <tr>
+                <th>Flight Number</th>
+                <th>Airline</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Departure</th>
+                <th>Arrival</th>
+                <th>Price</th>
+                <th>Seats</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let flight of flights">
+            <td>{{flight.flightNumber}}</td>
+            <td>{{flight.airline}}</td>
+            <td>{{flight.departureLocation}}</td>
+            <td>{{flight.arrivalLocation}}</td>
+            <td>{{flight.departureTime}}</td>
+            <td>{{flight.arrivalTime}}</td>
+            <td>{{flight.price}}</td>
+            <td>{{flight.totalSeats}}</td>
+            <td>
+                <button *ngIf="userRole === 'Admin'" (click)="updateFlight(flight.flightId)">Update</button>
+                <button *ngIf="userRole === 'Admin'" (click)="deleteFlight(flight.flightId)">Delete</button>
+                <button *ngIf="userRole === 'Traveller'" (click)="navigateToBooking(flight.flightId)">Book</button>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
