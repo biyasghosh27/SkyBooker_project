@@ -20,6 +20,22 @@ export class BookingService {
   }
 
   getAllBookings():Observable<any>{
-    return this.http.get(`${this.baseUrl}`)
+    return this.http.get(`${this.baseUrl}/bookings`);
+  }
+
+  getBookingsByUserId(userId:number):Observable<any>{
+    return this.http.get(`${this.baseUrl}/bookings/user/${userId}`);
+  }
+
+  updateBooking(id:number,booking:any):Observable<any>{
+    return this.http.put(`${this.baseUrl}/bookings/${id}`,booking);
+  }
+
+  deleteBooking(){
+
+  }
+
+  updateBookingStatus(){
+    
   }
 }
