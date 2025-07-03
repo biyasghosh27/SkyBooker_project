@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -13,10 +15,23 @@ export class RegisterComponent implements OnInit {
     username:'',
     mobileNumber:'',
     userRole:'Traveller'
-  }
-  constructor() { }
+  };
+  errorMessage = '';
+  successMessage = '';
+
+  constructor(private authService:AuthService, private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  register():void{
+    this.authService.register(this.user).subscribe({
+      next:()=>{
+        this.successMessage = 'Registered successfully!';
+        setTimeout(()=>this.router.navigate(['/login']),1000);
+      },
+      error:()=>this.errorMessage = 'Registration failed'
+    });
   }
 
 }
