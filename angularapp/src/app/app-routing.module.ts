@@ -11,13 +11,14 @@ import { RegisterComponent } from './components/register/register.component';
 import { ErrorComponent } from './components/error/error.component';
 
 const routes: Routes = [
-  {path:"",component:HomeComponent},
+  {path:"",redirectTo:"/home",pathMatch:'full'},
   {path:"home",component:HomeComponent},
   {path:"add-flight/:id",component:AddFlightComponent},
   {path:"add-flight",component:AddFlightComponent},
   {path:"flight-list",component:FlightListComponent},
   {path:"manage-booking",component:ManageBookingComponent},
   {path:"book-form",component:BookingFormComponent},
+  {path:"book-form/:id",component:BookingFormComponent},
   {path:"my-history",component:MyHistoryComponent},
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent},
