@@ -25,7 +25,27 @@ export class BookingFormComponent implements OnInit {
     private router:Router) { }
 
   ngOnInit(): void {
-    const id = this.router
+    const id = this.actRoute.snapshot.paramMap.get('id');
+    if(id) this.flightId = +id;
+  }
+
+  submitBooking():void{
+    const userId = this.authService.getUserId();
+    if(!userId){
+      this.errorMessage = 'User not logged in';
+      return;
+    }
+
+    const bookingPayload = {
+      ...this.booking,
+      flight:{flightId:this.flightId},
+      user:{userId:userId}
+    };
+
+    this.bookingService.createBooking(bookingPayload).subscribe({
+      next:()=>this.successMessage = 'Booking successful!',
+      error:()=>this.errorMessage = 'Booking failed'
+    });
   }
 
 }

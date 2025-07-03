@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+import { BookingService } from 'src/app/services/booking.service';
 
 @Component({
   selector: 'app-my-history',
@@ -7,13 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyHistoryComponent implements OnInit {
 
-  constructor() { }
+  bookings:any[] = [];
+  errorMessage = '';
+  userId:number | null = null;
+
+  constructor(private bookingService:BookingService,
+    private authService:AuthService) { }
 
   ngOnInit(): void {
+    this.userId = this.authService.getUserId();
+    if(this.userId!==null)
+    this.loadUserBookings();
   }
 
   loadUserBookings(){
-    
+    this.bookingService.getBookingsByUserId(this.userId!).subscribe({
+      next:(data)=>this.bookings = data,
+      error:()=>this.errorMessage = 'Failed to load your bookings.'
+    });
   }
 
 }
