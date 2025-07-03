@@ -8,7 +8,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class AuthService {
 
-  public baseUrl = 'http://localhost:8080/api';
+  public baseUrl = 'https://8080-afbbeccaabcfe328808123edccecfbdeone.project.examly.io/api';
 
   // private userRole = new BehaviorSubject<string | null>(localStorage.getItem('userRole'));
   // private userId = new BehaviorSubject<number | null>(Number(localStorage.getItem('userId')));
@@ -31,7 +31,7 @@ export class AuthService {
     localStorage.setItem('token',token);
     localStorage.setItem('userId',userId.toString());
     localStorage.setItem('userRole',userRole);
-    localStorage.setItem('username',this.extractUsernameFromEmail());
+    //localStorage.setItem('username',this.extractUsernameFromEmail());
   }
 
   //check login status
@@ -57,9 +57,9 @@ export class AuthService {
     this.router.navigate(['/login']);
   }
 
-  private extractUsernameFromEmail():string{
-    const email = localStorage.getItem('email');
-    return email ? email.split('@')[0]:'User';
-  }
+  // private extractUsernameFromEmail():string{
+  //   const email = localStorage.getItem('email');
+  //   return email ? email.split('@')[0]:'User';
+  // }
 
 }
