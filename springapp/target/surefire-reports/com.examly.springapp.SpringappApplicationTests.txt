@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.examly.springapp.SpringappApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 19, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 6.126 s <<< FAILURE! - in com.examly.springapp.SpringappApplicationTests
-backend_day24_testGetAllBookings  Time elapsed: 0.035 s  <<< FAILURE!
-java.lang.AssertionError: Status expected:<200> but was:<401>
-	at com.examly.springapp.SpringappApplicationTests.backend_day24_testGetAllBookings(SpringappApplicationTests.java:244)
-
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.454 s - in com.examly.springapp.SpringappApplicationTests
