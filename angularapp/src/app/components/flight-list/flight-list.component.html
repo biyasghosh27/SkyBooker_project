@@ -22,8 +22,8 @@
             <td>{{flight.airline}}</td>
             <td>{{flight.departureLocation}}</td>
             <td>{{flight.arrivalLocation}}</td>
-            <td>{{flight.departureTime}}</td>
-            <td>{{flight.arrivalTime}}</td>
+            <td>{{flight.departureTime | date: 'shortTime'}}</td>
+            <td>{{flight.arrivalTime | date: 'shortTime'}}</td>
             <td>{{flight.price}}</td>
             <td>{{flight.totalSeats}}</td>
             <td>

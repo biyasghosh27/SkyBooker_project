@@ -8,5 +8,6 @@ export interface Flight{
     departureTime:string;//change to string for time only
     arrivalTime:string;//change to string for time only
     price:number;
+    totalSeats?:number;
     
 }
