@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Flight } from 'src/app/models/flight.model';
 
 @Component({
   selector: 'app-add-flight',
@@ -7,13 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddFlightComponent implements OnInit {
 
-  flight:object;
+  flight:Flight;
   isEditing:boolean;
-  
+  successMessage = "";
+  errorMessage = "";
+
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
+  loadFlight(id:string){
 
+  }
+
+  addOrUpdateFlight(){
+
+  }
+
+  closeModal(){
+    
+  }
 }
