@@ -110,7 +110,6 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'testUser@example.com','9876543210','$2a$10$8KHdgUjtSNOOfpFz4JuDqOlM9Yd4yBi8P9/kTknCnj5uQl.k41Av.','Traveller','testUser'),(2,'testUser@example.com','9876543210','$2a$10$SJlO9ymNsYk8LUeAgrIcQe91KD/9CAdQWiRWTKst30yTy/BruTBFu','Traveller','testUser');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -123,4 +122,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-07-03  7:16:45
+-- Dump completed on 2025-07-03  7:31:45
