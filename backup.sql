@@ -52,3 +52,75 @@ CREATE TABLE `booking` (
 
 LOCK TABLES `booking` WRITE;
 /*!40000 ALTER TABLE `booking` DISABLE KEYS */;
+/*!40000 ALTER TABLE `booking` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `flight`
+--
+
+DROP TABLE IF EXISTS `flight`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `flight` (
+  `flight_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `airline` varchar(255) DEFAULT NULL,
+  `arrival_location` varchar(255) DEFAULT NULL,
+  `arrival_time` varchar(255) DEFAULT NULL,
+  `departure_location` varchar(255) DEFAULT NULL,
+  `departure_time` varchar(255) DEFAULT NULL,
+  `flight_number` varchar(255) DEFAULT NULL,
+  `price` double NOT NULL,
+  `total_seats` int(11) NOT NULL,
+  PRIMARY KEY (`flight_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `flight`
+--
+
+LOCK TABLES `flight` WRITE;
+/*!40000 ALTER TABLE `flight` DISABLE KEYS */;
+INSERT INTO `flight` VALUES (1,'Air India','Mumbai','2024-10-21T12:00:00','Delhi','2024-10-21T10:00:00','AI202',7500,75),(2,'Vistara','Bangalore','20:30 PM','London','13:30 PM','45678',3400.23,70),(3,'Vistara','Bangalore','20:30 PM','London','13:30 PM','45678',3400.23,70),(4,'Vistara','Bangalore','20:30 PM','London','13:30 PM','45678',3400.23,70);
+/*!40000 ALTER TABLE `flight` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `user` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) DEFAULT NULL,
+  `mobile_number` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `user_role` varchar(255) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (3,'biyas@example.com','9876543210','$2a$10$vdCldw1Eu1KeVNI.ExacheaHoAT3r.EpflEh.m0nzInPv6TWPa5qi','Traveller','bgfh'),(4,'biyassfqwe@example.com','9876543210','$2a$10$YTmDY/U5gjnnM9D9RutV3ujSNs6.ZkZ/qwM10NLDkG0wmeetlWtAm','Traveller','bgfh');
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2025-07-03 17:16:31
