@@ -2,22 +2,25 @@ package com.examly.springapp.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
-    private final JwtAuthenticationFilter jwtAuthFilter;
+    private final JwtAuthenticationFilter jwtAuthFilter = new JwtAuthenticationFilter();
     
-    private final ProjectUserDetailsService userDetailsService;
+    private final ProjectUserDetailsService userDetailsService = new ProjectUserDetailsService();
 
-    private final JwtAuthenticationEntryPoint authEntryPoint;
+    private final JwtAuthenticationEntryPoint authEntryPoint = new JwtAuthenticationEntryPoint();
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
@@ -33,9 +36,20 @@ public class SecurityConfig {
         ).permitAll()
         .anyRequest().authenticated()
         )
-        .exceptionHandling(ex -> ex.aut)
-        .httpBasic();
+        .exceptionHandling(ex -> ex.authenticationEntryPoint(authEntryPoint))
+        .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+        .authenticationProvider(daoAuthProvider())
+        .addFilterBefore(jwtAuthFilter,UsernamePasswordAuthenticationFilter.class);
+
         return http.build();
+    }
+
+    @Bean
+    public DaoAuthenticationProvider daoAuthProvider(){
+        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+        provider.setUserDetailsService(userDetailsService);
+        provider.setPasswordEncoder(passwordEncoder());
+        return provider;
     }
 
     @Bean
