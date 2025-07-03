@@ -12,6 +12,7 @@ import { ErrorComponent } from './components/error/error.component';
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
+  {path:"home",component:HomeComponent},
   {path:"add-flight/:id",component:AddFlightComponent},
   {path:"add-flight",component:AddFlightComponent},
   {path:"flight-list",component:FlightListComponent},

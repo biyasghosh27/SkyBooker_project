@@ -17,5 +17,19 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  login():void{
+    const credentials = {
+      email:this.email,
+      password:this.password
+    };
+
+    this.authService.login(credentials).subscribe({
+      next:(response)=>{
+        this.authService.storeAuthData(response.token,response.userId,response.userRole);
+        this.router.navigate(['/home']);
+      },
+      error:()=>this.errorMessage = 'Invalid credentials'
+    });``
+  }
 
 }
