@@ -43,10 +43,11 @@ export class AddFlightComponent implements OnInit {
   addOrUpdateFlight(){
     const updatedFlight = {
       ...this.flight,
-      departureTime:new Date(this.flight.departureTime).toISOString()[Symbol]a
-    }
-    const serviceCall = this.isEditing ? this.flightService.updateFlight(this.flight.flightId, this.flight)
-    : this.flightService.createFlight(this.flight);
+      departureTime:new Date(this.flight.departureTime).toISOString(),
+      arrivalTime:new Date(this.flight.arrivalTime).toISOString()
+    };
+    const serviceCall = this.isEditing ? this.flightService.updateFlight(this.flight.flightId, updatedFlight)
+    : this.flightService.createFlight(updatedFlight);
 
     serviceCall.subscribe({
       next:() =>{
