@@ -20,22 +20,29 @@ export class FlightListComponent implements OnInit {
     private router:Router) { }
 
   ngOnInit(): void {
+    this.userRole = this.authService.getUserRole()||'';
     this.loadFlights();
   }
 
   loadFlights(){
-    return this.flights;
+    this.flightService.getAllFlights().subscribe({
+      next:(data)=>this.flights=data,
+      error:()=>this.errorMessage = 'Failed to load flights.'
+    });
   }
 
   updateFlight(id:number){
-
+    this.router.navigate(['/add-flight',id]);
   }
 
   deleteFlight(id:number){
-
+    this.flightService.deleteFlight(id).subscribe({
+      next:()=>this.loadFlights(),
+      error:()=>this.errorMessage = 'Failed to delete flight.'
+    });
   }
 
   navigateToBooking(flightId:number){
-    
+    this.router.navigate(['/book-form',flightId]);
   }
 }
