@@ -1,4 +1,4 @@
-package com.examly.springapp.config;
+package com.examly.springapp.dto;
 
 public class JwtAuthResponse {
     private String token;
