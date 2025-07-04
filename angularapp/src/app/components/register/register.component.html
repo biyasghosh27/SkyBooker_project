@@ -50,7 +50,7 @@
     <div class="error-message" *ngIf="username.invalid && (username.touched || username.dirty)"> 
         <small *ngIf="username?.hasError('required')">Username is required</small>
     </div>
-    <input type="password" name="password" ngModel id="password" #password="ngModel" required/>
+<input type="password" name="password" ngModel id="password" #password="ngModel" required/>
     <div class="error-message" *ngIf="password.invalid && (password.touched || password.dirty)"> 
         <small *ngIf="password?.hasError('required')">Password is required</small>
         <span *ngIf="passwordPatternError">Password must include at least one uppercase letter, one lowercase letter, one digit, and one special character</span>
