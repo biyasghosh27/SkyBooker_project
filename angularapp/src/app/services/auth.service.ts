@@ -14,7 +14,8 @@ export class AuthService {
   // private userId = new BehaviorSubject<number | null>(Number(localStorage.getItem('userId')));
   // private token = new BehaviorSubject<string | null>(localStorage.getItem('token'));
 
-  constructor(private http:HttpClient, private router:Router) { }
+  constructor(private http:HttpClient){}
+  // , private router:Router) { }
 
   //Register user
   register(user:any):Observable<any>{
@@ -54,7 +55,7 @@ export class AuthService {
   //logout
   logout():void{
     localStorage.clear();
-    this.router.navigate(['/login']);
+    // this.router.navigate(['/login']);
   }
 
   private extractUsernameFromEmail():string{
