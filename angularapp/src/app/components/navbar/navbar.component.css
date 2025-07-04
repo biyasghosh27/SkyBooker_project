@@ -12,7 +12,9 @@
     justify-content: space-between;
     align-items: center;
 }
-
+.navbar a{
+    color: #6b0f1a;
+}
 .nav-links{
     list-style: none;
     display: flex;
