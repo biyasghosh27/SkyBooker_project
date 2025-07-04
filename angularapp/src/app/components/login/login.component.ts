@@ -9,9 +9,12 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  email = '';
-  password = '';
-  errorMessage = '';
+  credentials = {
+    email:'',
+    password: ''
+  }
+
+  loginError:string ='';
 
   constructor(private authService:AuthService, private router:Router) { }
 
@@ -19,20 +22,16 @@ export class LoginComponent implements OnInit {
   }
   
   login():void{
-    const credentials = {
-      email:this.email,
-      password:this.password
-    };
-
-    this.authService.login(credentials).subscribe({
-      next:(response)=>{
-        this.authService.storeAuthData(response.token,response.userId,response.userRole);
-        this.router.navigate(['/home']).then(()=>{
-          window.location.reload();
-        });
-      },
-      error:()=>this.errorMessage = 'Login failed'
-    });
+   this.authService.login(this.credentials).subscribe({
+    next:(res)=>{
+      this.authService.storeAuthData(res.token, res.userId, res.userRole);
+      this.router.navigate(['/home']).then(()=>
+      window.location.reload());
+    },
+    error:()=>{
+      this.loginError = 'Invalid email or password';
+    }
+   });
   }
 
 }

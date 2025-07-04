@@ -7,12 +7,12 @@
     </div>
     <input type="email" name="email" [(ngModel)]="user.email" placeholder="Email" #email="ngModel" required/>
     <div class="error-message" *ngIf="email.invalid && email.touched"> 
-        <span *ngIf="email.error?.['required']">Email is required</span>
-        <span *ngIf="email.errors?.['email']">Please enter a valid email</span>
+        <span *ngIf="email.errors?.required">Email is required</span>
+        <span *ngIf="email.errors?.email">Please enter a valid email</span>
     </div>
     <input type="password" name="password" [(ngModel)]="user.password" placeholder="Password" #password="ngModel" required/>
     <div class="error-message" *ngIf="password.invalid && password.touched"> 
-        <span *ngIf="password.error?.['required']">Password is required</span>
+        <span *ngIf="password.errors?.required">Password is required</span>
         <span *ngIf="passwordPatternError">Password must include at least one uppercase letter, one lowercase letter, one digit, and one special character</span>
     </div>
     <input type="password" name="confirmPassword" [(ngModel)]="confirmPassword" placeholder="Confirm Password" #confirmPasswordField="ngModel" required/>
@@ -24,8 +24,8 @@
     </div>
     <input type="text" name="mobileNumber" [(ngModel)]="user.mobileNumber" placeholder="Mobile Number" #mobileNumber="ngModel" required pattern="^[0-9]{10}$"/>
     <div class="error-message" *ngIf="mobileNumber.invalid && mobileNumber.touched"> 
-        <span *ngIf="mobileNumber.error?.['required']">Mobile number is required</span>
-        <span *ngIf="mobileNumber.error?.['pattern']">Mobile number must be 10 digits</span>
+        <span *ngIf="mobileNumber.errors?.required">Mobile number is required</span>
+        <span *ngIf="mobileNumber.errors?.pattern">Mobile number must be 10 digits</span>
     </div>
     <select type="text" name="userRole" [(ngModel)]="user.userRole" placeholder="User Role" #userRole="ngModel" required>
         <option value="" disabled selected>Select Role</option>
@@ -39,7 +39,7 @@
     <button type="submit" [disabled]="registerForm.invalid">Register</button>
     </form>
     <!-- success message -->
-    <div *ngIf="showModal" class="modal" tabindex="0" (keydown.escape)="closeModal()" autofocus>
+    <div *ngIf="showModal" class="modal" (keydown.escape)="closeModal()" autofocus>
         <div class="modal-content">
             <p>Registration Successful!</p>
             <button (click)="goToLogin()">Go to login</button>
