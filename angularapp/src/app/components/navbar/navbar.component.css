@@ -43,19 +43,6 @@
     cursor: pointer;
 }
 
-.nav-links a:hover{
-    color: white;
-    text-decoration: underline;
-}
-
-.dropdown-content{
-    position: absolute;
-    background-color: white;
-    border: 1px solid #ccc;
-    padding: 5px 10px;
-    margin-top: 5px;
-    list-style: none;
-}
 
 .logout-popup{
     position: fixed;
