@@ -1,7 +1,9 @@
 <div class="center-card">
     <h2>Available Flights</h2>
     <p *ngIf="errorMessage">{{errorMessage}}</p>
+    <!-- THIS -->
     <p *ngIf="flights.length===0">No flights available.</p>
+    <!-- This  -->
     <table *ngIf="flights.length > 0">
         <thead>
             <tr>
