@@ -11,6 +11,7 @@ import { FlightService } from 'src/app/services/flight.service';
 })
 export class FlightListComponent implements OnInit {
 
+  //THIS
   flights:Flight[] = [];
   errorMessage:string = '';
   userRole:string = '';
@@ -33,15 +34,15 @@ export class FlightListComponent implements OnInit {
 
   //THIS
   updateFlight(id:number){
-    // this.router.navigate(['/add-flight',id]);
+    this.router.navigate(['/add-flight',id]);
   }
 
   //THIS
   deleteFlight(id:number){
-    // this.flightService.deleteFlight(id).subscribe({
-    //   next:()=>this.loadFlights(),
-    //   error:()=>this.errorMessage = 'Failed to delete flight.'
-    // });
+    this.flightService.deleteFlight(id).subscribe({
+      next:()=>this.loadFlights(),
+      error:()=>this.errorMessage = 'Failed to delete flight.'
+    });
   }
 
   navigateToBooking(flightId:number){
