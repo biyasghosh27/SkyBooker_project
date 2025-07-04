@@ -1,6 +1,13 @@
 .logo{
     font-family: 'Poppins',sans-serif;
-    
+    font-size: 2rem;
+    color: white;
+    text-shadow: 1px 1px 5px #000;
+}
+
+.logo span{
+    font-weight: 600;
+    color: #ffdddd;
 }
 
 .navbar{
