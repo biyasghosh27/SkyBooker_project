@@ -10,14 +10,17 @@ import { AuthService } from 'src/app/services/auth.service';
 export class RegisterComponent implements OnInit {
 
   user:any = {
+    username:'',
     email:'',
     password:'',
-    username:'',
     mobileNumber:'',
     userRole:''
   };
-  errorMessage = '';
-  successMessage = '';
+  
+  confirmPassword:string ='';
+  passwordMismatch:boolean=false;
+  passwordPatternError:boolean= false;
+  showModal:boolean=false;
 
   constructor(private authService:AuthService, private router:Router) { }
 
@@ -25,21 +28,28 @@ export class RegisterComponent implements OnInit {
   }
 
   register():void{
-    console.log("registering user:",this.user);
-    //check purpose codes
+    this.passwordMismatch = this.user.password !== this.confirmPassword;
+    this.passwordPatternError = !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$/.test(this.user.password);
+    if(this.passwordMismatch || this.passwordPatternError){
+      return;
+    }
     this.authService.register(this.user).subscribe({
       next:()=>{
-        this.successMessage = 'Registered successfully!';
-        this.errorMessage = '';
-        this.router.navigate(['/login']);
-        // setTimeout(()=>this.router.navigate(['/login']),1000);
+        this.showModal = true;
       },
-      error:(err)=>{
-        console.error('Registartion failed:',err);
-        this.errorMessage = 'Registration failed';
-        this.successMessage = '';
+      error:()=>{
+        alert('Registration failed')
       }
     });
+  }
+
+  goToLogin(){
+    this.showModal = false;
+    this.router.navigate['/login'];
+  }
+
+  closeModal(){
+    this.showModal=false;
   }
 
 }

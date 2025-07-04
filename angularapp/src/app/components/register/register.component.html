@@ -22,15 +22,27 @@
     <div class="error-message" *ngIf="passwordMismatch">
         Passwords do not match
     </div>
-    <input type="text" name="mobileNumber" [(ngModel)]="user.mobileNumber" placeholder="Mobile Number" #mobileNumber="ngModel" required pattern="^[0-9]$"/>
+    <input type="text" name="mobileNumber" [(ngModel)]="user.mobileNumber" placeholder="Mobile Number" #mobileNumber="ngModel" required pattern="^[0-9]{10}$"/>
     <div class="error-message" *ngIf="mobileNumber.invalid && mobileNumber.touched"> 
         <span *ngIf="mobileNumber.error?.['required']">Mobile number is required</span>
         <span *ngIf="mobileNumber.error?.['pattern']">Mobile number must be 10 digits</span>
     </div>
-    <input type="text" name="userRole" [(ngModel)]="user.userRole" placeholder="User Role" required/>
+    <select type="text" name="userRole" [(ngModel)]="user.userRole" placeholder="User Role" #userRole="ngModel" required>
+        <option value="" disabled selected>Select Role</option>
+        <option value="Admin">Admin</option>
+        <option value="Traveller">Traveller</option>
+    </select>
+    <div class="error-message" *ngIf="userRole.invalid && userRole.touched"> 
+        Role is required
+    </div>
     <br><br>
     <button type="submit" [disabled]="registerForm.invalid">Register</button>
     </form>
-    <p *ngIf="successMessage">{{successMessage}}</p>
-    <p *ngIf="errorMessage">{{errorMessage}}</p>
+    <!-- success message -->
+    <div *ngIf="showModal" class="modal" tabindex="0" (keydown.escape)="closeModal()" autofocus>
+        <div class="modal-content">
+            <p>Registration Successful!</p>
+            <button (click)="goToLogin()">Go to login</button>
+        </div>
+    </div>
 </div>

@@ -1,7 +1,11 @@
 <div class="center-card">
     <h2>Login</h2>
     <form (ngSubmit)="login()" #loginForm="ngForm">
-    <input type="email" name="email" [(ngModel)]="email" placeholder="Email" required/>
+    <input type="email" name="email" [(ngModel)]="credentials.email" placeholder="Email" #email="ngModel" required email/>
+    <div class="error-message" *ngIf="email.invalid && email.touched">
+        <span *ngIf="email.errors?.['required']">Email is required</span>
+        <span *ngIf="email.errors?.['email']"></span>
+    </div>
     <input type="password" name="password" [(ngModel)]="password" placeholder="Password" required/>
     <button type="submit" [disabled]="loginForm.invalid">Login</button>
     </form>
