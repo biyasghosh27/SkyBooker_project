@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
     password:'',
     username:'',
     mobileNumber:'',
-    userRole:'Traveller'
+    userRole:''
   };
   errorMessage = '';
   successMessage = '';
@@ -25,7 +25,6 @@ export class RegisterComponent implements OnInit {
   }
 
   register():void{
-    this.user.userRole = 'Traveller';
     console.log("registering user:",this.user);
     //check purpose codes
     this.authService.register(this.user).subscribe({

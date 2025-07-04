@@ -17,8 +17,6 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  //TESTING
-  // console.log("trying to log in with ", this.user);
   
   login():void{
     const credentials = {
@@ -29,9 +27,11 @@ export class LoginComponent implements OnInit {
     this.authService.login(credentials).subscribe({
       next:(response)=>{
         this.authService.storeAuthData(response.token,response.userId,response.userRole);
-        this.router.navigate(['/home']);
+        this.router.navigate(['/home']).then(()=>{
+          window.location.reload();
+        });
       },
-      error:()=>this.errorMessage = 'Invalid credentials'
+      error:()=>this.errorMessage = 'Login failed'
     });
   }
 

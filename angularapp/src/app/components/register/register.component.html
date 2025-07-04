@@ -5,6 +5,7 @@
     <input type="email" name="email" [(ngModel)]="user.email" placeholder="Email" required/>
     <input type="password" name="password" [(ngModel)]="user.password" placeholder="Password" required/>
     <input type="text" name="mobileNumber" [(ngModel)]="user.mobileNumber" placeholder="Mobile Number" required/>
+    <input type="text" name="userRole" [(ngModel)]="user.userRole" placeholder="User Role" required/>
     <br><br>
     <button type="submit" [disabled]="registerForm.invalid">Register</button>
     </form>
