@@ -45,9 +45,9 @@
 
 
 .logout-popup{
-    /* position: fixed;
+    position: fixed;
     top:20%;
-    left:50%; */
+    left:50%;
     transform: translateX(-50%);
     background: white;
     border: 2px solid #cf2a46;
@@ -75,17 +75,8 @@
 }
 
 .welcome-msg{
-    color: #4b0000;
     font-size: 1rem;
     margin-right: auto;
     padding: 0.5rem 1rem;
     font-weight: 500;
 }
-
-/* .logout-popup button{
-    flex: 1;
-    margin: 0 0.5rem;
-    padding: 8px 14px;
-    border-radius: 8px;
-    font-weight: 500;
-} */
