@@ -82,7 +82,7 @@ CREATE TABLE `flight` (
 
 LOCK TABLES `flight` WRITE;
 /*!40000 ALTER TABLE `flight` DISABLE KEYS */;
-INSERT INTO `flight` VALUES (1,'Air India','Mumbai','2024-10-21T12:00:00','Delhi','2024-10-21T10:00:00','AI202',7500,75),(2,'Vistara','Bangalore','20:30 PM','London','13:30 PM','45678',3400.23,70),(3,'Vistara','Bangalore','20:30 PM','London','13:30 PM','45678',3400.23,70),(4,'Vistara','Bangalore','20:30 PM','London','13:30 PM','45678',3400.23,70);
+INSERT INTO `flight` VALUES (1,'Air India','Mumbai','2024-10-21T12:00:00','Delhi','2024-10-21T10:00:00','AI202',7500,75);
 /*!40000 ALTER TABLE `flight` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -123,4 +123,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-07-04 18:08:26
+-- Dump completed on 2025-07-04 18:23:24
