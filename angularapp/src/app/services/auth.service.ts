@@ -31,7 +31,7 @@ export class AuthService {
     localStorage.setItem('token',token);
     localStorage.setItem('userId',userId.toString());
     localStorage.setItem('userRole',userRole);
-    //localStorage.setItem('username',this.extractUsernameFromEmail());
+    localStorage.setItem('username',this.extractUsernameFromEmail());
   }
 
   //check login status
@@ -57,9 +57,9 @@ export class AuthService {
     this.router.navigate(['/login']);
   }
 
-  // private extractUsernameFromEmail():string{
-  //   const email = localStorage.getItem('email');
-  //   return email ? email.split('@')[0]:'User';
-  // }
+  private extractUsernameFromEmail():string{
+    const email = localStorage.getItem('email');
+    return email ? email.split('@')[0]:'User';
+  }
 
 }

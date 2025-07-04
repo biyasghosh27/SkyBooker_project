@@ -40,8 +40,10 @@ export class NavbarComponent implements OnInit {
     this.isLoggedIn = false;
     this.userRole = '';
     this.userName = '';
-    this.router.navigate(['/login']);
     this.showLogoutPopup = false;
+    setTimeout(()=>{
+      this.router.navigate(['/login']);
+    },100);   
   }
 
 }
