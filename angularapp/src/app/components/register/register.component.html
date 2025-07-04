@@ -1,10 +1,32 @@
 <div class="center-card">
     <h2>Register</h2>
     <form (ngSubmit)="register()" #registerForm="ngForm">
-    <input type="text" name="username" [(ngModel)]="user.username" placeholder="Username" #user required/>
-    <input type="email" name="email" [(ngModel)]="user.email" placeholder="Email" required/>
-    <input type="password" name="password" [(ngModel)]="user.password" placeholder="Password" required/>
-    <input type="text" name="mobileNumber" [(ngModel)]="user.mobileNumber" placeholder="Mobile Number" required/>
+    <input type="text" name="username" [(ngModel)]="user.username" placeholder="Username" #username="ngModel" required/>
+    <div class="error-message" *ngIf="username.invalid && username.touched"> 
+        Username is required
+    </div>
+    <input type="email" name="email" [(ngModel)]="user.email" placeholder="Email" #email="ngModel" required/>
+    <div class="error-message" *ngIf="email.invalid && email.touched"> 
+        <span *ngIf="email.error?.['required']">Email is required</span>
+        <span *ngIf="email.errors?.['email']">Please enter a valid email</span>
+    </div>
+    <input type="password" name="password" [(ngModel)]="user.password" placeholder="Password" #password="ngModel" required/>
+    <div class="error-message" *ngIf="password.invalid && password.touched"> 
+        <span *ngIf="password.error?.['required']">Password is required</span>
+        <span *ngIf="passwordPatternError">Password must include at least one uppercase letter, one lowercase letter, one digit, and one special character</span>
+    </div>
+    <input type="password" name="confirmPassword" [(ngModel)]="confirmPassword" placeholder="Confirm Password" #confirmPasswordField="ngModel" required/>
+    <div class="error-message" *ngIf="confirmPasswordField.invalid && confirmPasswordField.touched"> 
+        Confirm Password is required
+    </div>
+    <div class="error-message" *ngIf="passwordMismatch">
+        Passwords do not match
+    </div>
+    <input type="text" name="mobileNumber" [(ngModel)]="user.mobileNumber" placeholder="Mobile Number" #mobileNumber="ngModel" required pattern="^[0-9]$"/>
+    <div class="error-message" *ngIf="mobileNumber.invalid && mobileNumber.touched"> 
+        <span *ngIf="mobileNumber.error?.['required']">Mobile number is required</span>
+        <span *ngIf="mobileNumber.error?.['pattern']">Mobile number must be 10 digits</span>
+    </div>
     <input type="text" name="userRole" [(ngModel)]="user.userRole" placeholder="User Role" required/>
     <br><br>
     <button type="submit" [disabled]="registerForm.invalid">Register</button>
