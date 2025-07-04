@@ -10,6 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ErrorComponent } from './components/error/error.component';
 import { AuthGuard } from './guards/auth.guard';
+import { ForbiddenComponent } from './components/forbidden/forbidden.component';
 
 const routes: Routes = [
   {path:"",redirectTo:"/home",pathMatch:'full'},
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path:"book-form",component:BookingFormComponent,canActivate:[AuthGuard]},
   {path:"book-form/:id",component:BookingFormComponent,canActivate:[AuthGuard]},
   {path:"my-history",component:MyHistoryComponent,canActivate:[AuthGuard]},
-  
+
+  {path:"forbidden",component:ForbiddenComponent},
   {path:"**",component:ErrorComponent}
 ];
 
