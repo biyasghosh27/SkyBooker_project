@@ -1,7 +1,6 @@
 .logo{
-    font-weight: bold;
-    font-size: 24px;
-    cursor: pointer;
+    font-family: 'Poppins',sans-serif;
+    
 }
 
 .navbar{
@@ -14,6 +13,15 @@
 }
 .navbar a{
     color: #6b0f1a;
+    padding: 0.6rem 1rem;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.3s ease-in-out;
+}
+.navbar a:hover{
+    color: white;
+    border-bottom: 2px solid white;
+    text-shadow: 0 0 5px #fff;
 }
 .nav-links{
     list-style: none;
@@ -26,13 +34,6 @@
 
 .nav-links li{
     cursor: pointer;
-}
-
-.nav-links a{
-    text-decoration: none;
-    color: #cf2a46;
-    font-weight: bold;
-    transition: all 0.3s ease;
 }
 
 .nav-links a:hover{
@@ -61,14 +62,18 @@
 }
 
 .nav-links button{
-    background: none;
-    border: none;
-    color: #cf2a46;
-    font-weight: bold;
+    background-color: transparent;
+    border: 1px solid #6b0f1a;
+    padding: 6px 12px;
+    border-radius: 8px;
+    color: #6b0f1a;
+    font-weight: 500;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .nav-links button:hover{
+    background-color: #6b0f1a;
     color: white;
-    text-decoration: underline;
 }
+
