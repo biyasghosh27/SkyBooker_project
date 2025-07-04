@@ -5,8 +5,8 @@
     <div class="error-message" *ngIf="username.invalid && (username.touched || username.dirty)"> 
         <small *ngIf="username?.hasError('required')">Username is required</small>
     </div>
-    <input type="email" name="email" [(ngModel)]="user.email" placeholder="Email" #email="ngModel" id="email" required/>
-    <div class="error-message" *ngIf="email.invalid && email.touched"> 
+    <input type="email" name="email" [(ngModel)]="user.email" placeholder="Email" #email="ngModel" id="email" required email/>
+    <div class="error-message" *ngIf="email.invalid && (email.touched || email.dirty)"> 
         <small *ngIf="email.errors?.required">Email is required</small>
         <small *ngIf="email.errors?.email">Please enter a valid email</small>
     </div>
@@ -16,14 +16,14 @@
         <small *ngIf="passwordPatternError">Password must include at least one uppercase letter, one lowercase letter, one digit, and one special character</small>
     </div>
     <input type="password" name="confirmPassword" [(ngModel)]="confirmPassword" placeholder="Confirm Password" #confirmPasswordField="ngModel" required/>
-    <div class="error-message" *ngIf="confirmPasswordField.invalid && confirmPasswordField.touched"> 
+    <div class="error-message" *ngIf="confirmPasswordField.invalid && (confirmPasswordField.touched || confirmPasswordField.dirty)"> 
         <small>Confirm Password is required</small>
     </div>
     <div class="error-message" *ngIf="passwordMismatch">
         <small>Passwords do not match</small>
     </div>
     <input type="text" name="mobileNumber" [(ngModel)]="user.mobileNumber" placeholder="Mobile Number" id="mobileNumber" #mobileNumber="ngModel" required pattern="^[0-9]{10}$"/>
-    <div class="error-message" *ngIf="mobileNumber.invalid && mobileNumber.touched"> 
+    <div class="error-message" *ngIf="mobileNumber.invalid && (mobileNumber.touched || mobileNumber.dirty)"> 
         <small *ngIf="mobileNumber.errors?.required">Mobile number is required</small>
         <small *ngIf="mobileNumber.errors?.pattern">Mobile number must be 10 digits</small>
     </div>

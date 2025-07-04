@@ -45,7 +45,7 @@ export class RegisterComponent implements OnInit {
 
   goToLogin(){
     this.showModal = false;
-    this.router.navigate['/login'];
+    this.router.navigate(['/login']);
   }
 
   closeModal(){
