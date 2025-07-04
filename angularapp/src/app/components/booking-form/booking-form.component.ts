@@ -35,7 +35,6 @@ export class BookingFormComponent implements OnInit {
       this.errorMessage = 'User not logged in';
       return;
     }
-
     const bookingPayload = {
       ...this.booking,
       flight:{flightId:this.flightId},

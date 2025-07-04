@@ -1,9 +1,7 @@
 <div class="center-card">
     <h2>All Bookings</h2>
-    <div class="err-succ-message">
     <p *ngIf="errorMessage">{{errorMessage}}</p>
     <p *ngIf="bookings.length === 0">No bookings available.</p>
-    </div>
     <table *ngIf="bookings.length > 0">
         <thead>
             <tr>

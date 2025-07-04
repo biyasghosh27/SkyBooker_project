@@ -6,10 +6,8 @@
         <br><br>
         <button type="submit" [disabled]="bookingForm.invalid">Submit Booking</button>
     </form>
-    <div class="err-succ-message">
     <div *ngIf="successMessage">
     <p>{{successMessage}}</p>
     </div>
     <p *ngIf="errorMessage">{{errorMessage}}</p>
-    </div>
 </div>
