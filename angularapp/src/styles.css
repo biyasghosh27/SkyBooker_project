@@ -115,7 +115,8 @@ th{
     background-color: #ffe6e6;
 }
 
-.err-succ-message{
+.err-succ-message,
+.error-message{
     background-color: #ffe0e0;
     border: 1px solid #cc0000;
     color: #660000;
@@ -124,3 +125,4 @@ th{
     border-radius: 6px;
     font-weight: 500;
 }
+
