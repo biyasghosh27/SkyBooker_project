@@ -9,19 +9,22 @@ import { BookingFormComponent } from './components/booking-form/booking-form.com
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ErrorComponent } from './components/error/error.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {path:"",redirectTo:"/home",pathMatch:'full'},
   {path:"home",component:HomeComponent},
-  {path:"add-flight/:id",component:AddFlightComponent},
-  {path:"add-flight",component:AddFlightComponent},
-  {path:"flight-list",component:FlightListComponent},
-  {path:"manage-booking",component:ManageBookingComponent},
-  {path:"book-form",component:BookingFormComponent},
-  {path:"book-form/:id",component:BookingFormComponent},
-  {path:"my-history",component:MyHistoryComponent},
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent},
+
+  {path:"add-flight/:id",component:AddFlightComponent,canActivate:[AuthGuard]},
+  {path:"add-flight",component:AddFlightComponent,canActivate:[AuthGuard]},
+  {path:"flight-list",component:FlightListComponent,canActivate:[AuthGuard]},
+  {path:"manage-booking",component:ManageBookingComponent,canActivate:[AuthGuard]},
+  {path:"book-form",component:BookingFormComponent,canActivate:[AuthGuard]},
+  {path:"book-form/:id",component:BookingFormComponent,canActivate:[AuthGuard]},
+  {path:"my-history",component:MyHistoryComponent,canActivate:[AuthGuard]},
+  
   {path:"**",component:ErrorComponent}
 ];
 

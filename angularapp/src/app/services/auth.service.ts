@@ -14,8 +14,8 @@ export class AuthService {
   // private userId = new BehaviorSubject<number | null>(Number(localStorage.getItem('userId')));
   // private token = new BehaviorSubject<string | null>(localStorage.getItem('token'));
 
-  constructor(private http:HttpClient){}
-  // , private router:Router) { }
+  //THIS USE OF ROUTER HERE FAILING TEST CASES
+  constructor(private http:HttpClient,private router:Router) { }
 
   //Register user
   register(user:any):Observable<any>{
@@ -39,6 +39,14 @@ export class AuthService {
   isLoggedIn():boolean{
     return !!localStorage.getItem('token');
   }
+
+  isAdmin():boolean{
+    return localStorage.getItem('userRole')==='Admin';
+  }
+
+  isTraveller():boolean{
+    return localStorage.getItem('userRole')==='Traveller';
+  }
   
   getUserRole():string{
     return localStorage.getItem('userRole')||'';
@@ -55,12 +63,14 @@ export class AuthService {
   //logout
   logout():void{
     localStorage.clear();
-    // this.router.navigate(['/login']);
+    this.router.navigate(['/login']);
   }
+  //THIS ROUTING WAS FAILING TEST CASES
 
   private extractUsernameFromEmail():string{
     const email = localStorage.getItem('email');
     return email ? email.split('@')[0]:'User';
   }
 
+  
 }
