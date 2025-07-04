@@ -9,10 +9,12 @@
         </ng-container>
         <!-- authenticated -->
         <ng-container *ngIf="isLoggedIn">
-        <div class="welcome-msg">
-            <span></span>
-            <li><strong>{{ userName }}</strong>({{ userRole }})</li>
-        </div>
+            <li>
+                <div class="welcome-msg">
+                    <span>Welcome,</span>
+                    <strong>{{ userName }} ({{ userRole }})</strong>
+                </div>
+            </li>
             <li><a routerLink="/home">Home</a></li>
             <!-- Admin only link -->
             <ng-container *ngIf="userRole === 'Admin'">

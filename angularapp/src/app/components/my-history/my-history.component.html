@@ -1,7 +1,9 @@
 <div class="center-card">
     <h2>My Booking History</h2>
+    <div class="err-succ-message">
     <p *ngIf="errorMessage">{{errorMessage}}</p>
     <p *ngIf="bookings.length === 0">No bookings found.</p>
+    </div>
     <ul *ngIf="bookings.length > 0">
     <li *ngFor="let b of bookings">
         <p>Booking ID: {{b.bookingId}}</p>

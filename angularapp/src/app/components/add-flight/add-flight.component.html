@@ -19,9 +19,11 @@
     <br><br>
     <button type="submit" [disabled]="flightForm.invalid">{{isEditing ? 'Update Flight' : 'Add Flight'}}</button>
 </form>
+<div class="err-succ-message">
 <div *ngIf="successMessage">
     <p>{{successMessage}}</p>
     <button (click)="closeModal()">Close</button>
 </div>
 <p *ngIf="errorMessage">{{errorMessage}}</p>
+</div>
 </div>
