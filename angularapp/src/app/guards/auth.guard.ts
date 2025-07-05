@@ -19,13 +19,13 @@ export class AuthGuard implements CanActivate {
       return false;
     }
     const path = route.url[0]?.path;
-    if(path === 'add-flight'|| path === 'manage-booking'|| path==='manage-flights'){
+    if(path === 'add-flight'|| path === 'manage-booking'||){
       if(!this.authService.isAdmin()){
         this.router.navigate(['/forbidden']);
         return false;
       }
     }
-    if(path === 'my-history'|| path === 'book-flight'){
+    if(path === 'my-history'|| path === 'book-form'){
       if(!this.authService.isTraveller()){
         this.router.navigate(['/forbidden']);
         return false;
