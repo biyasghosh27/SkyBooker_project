@@ -28,10 +28,12 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter{
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)throws ServletException, IOException{
         
         String path = request.getServletPath();
+        System.out.println("Request Path: " + path);
 
         //Bypassing only login and register endpoints
 
         if(path.contains("/api/login") || path.contains("/api/register")){
+            System.out.println("Skipping token filter for path: ' + path);
             filterChain.doFilter(request, response);
             return;
         }
