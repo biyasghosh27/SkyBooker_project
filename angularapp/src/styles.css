@@ -11,7 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* margin-top: 10px; */
+    /* overflow: hidden; */
 }
 
 body,html{
@@ -151,10 +151,23 @@ button:disabled{
     cursor: not-allowed;
 }
 .card{
+    color: #cf2a46;
     max-height: 80vh; /* limit height to 80% of viewport */
     overflow-y: auto; /* add scroll inside the card  */
     padding: 2rem;
     background-color: rgba(255,255,255,0.95); /*white card*/
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2));
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 700px;
+}
+
+.card::-webkit-scrollbar{
+    width: 8px;
+}
+
+.card::-webkit-scrollbar-thumb{
+    background-color: #aaa;
+    border-radius: 4px;
 }
