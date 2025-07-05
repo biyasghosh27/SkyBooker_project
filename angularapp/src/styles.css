@@ -54,8 +54,16 @@ body,html{
     color: #cf2a46;
     margin-bottom: 15px;
 }
-
+.center-table-card h2{
+    color: #cf2a46;
+    margin-bottom: 15px;
+}
 .center-card p{
+    color: #333;
+    line-height: 1.6;
+    text-align: justify;
+}
+.center-table-card p{
     color: #333;
     line-height: 1.6;
     text-align: justify;

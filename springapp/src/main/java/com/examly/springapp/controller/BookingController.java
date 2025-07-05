@@ -55,7 +55,7 @@ public class BookingController {
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
-    @GetMapping("api/bookings/user/{userId}")
+    @GetMapping("/api/bookings/user/{userId}")
     public List<Booking> getBookingsByUserId(@PathVariable int userId){
         return bookingService.getBookingsByUserId(userId);
     }

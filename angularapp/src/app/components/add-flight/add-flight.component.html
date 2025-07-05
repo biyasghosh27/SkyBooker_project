@@ -1,4 +1,4 @@
-<div class="center-card">
+<div class="center-table-card">
 <h2>{{isEditing ? 'Update Flight' : 'Add Flight'}}</h2>
 <form (ngSubmit)="addOrUpdateFlight()" #flightForm="ngForm" class="form-container">
     <input type="text" name="flightNumber" [(ngModel)]="flight.flightNumber" placeholder="Flight Number" required/>
