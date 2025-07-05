@@ -22,13 +22,27 @@ body,html{
     letter-spacing: 0.5px;
     height: 100%;
 }
+.tabble-wrapper{
+    overflow-x: auto;
+    max-width: 100%;
+}
 
+.center-table-card{
+    background-color: rgba(255,255,255,0.8);
+    padding: 20px 30px;
+    max-width: 90vw;
+    overflow-x: auto;
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
 
 .center-card{
     background-color: rgba(255,255,255,0.8);
     padding: 20px 30px;
-    max-width: 90vw;
-    /* 700px */
+    max-width: 700px;
+    /* 90vw; */
     overflow-x: auto;
     width: auto;
     border-radius: 10px;
@@ -68,10 +82,7 @@ button{
 button:hover{
     background-color: #a11e35;
 }
-.tabble-wrapper{
-    overflow-x: auto;
-    max-width: 100%;
-}
+
 table{
     width:100%;
     border-collapse: collapse;
