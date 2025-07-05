@@ -7,4 +7,7 @@ export interface Booking {
     numberOfPassengers?:number;
     status?:string;//CONFIRMED, CANCELED
 
+    //only numberOfPassengers in enough because status will set and then changed from admin side
+    //bookingDate will be current date
+    //the other three comes directly from different places
 }
