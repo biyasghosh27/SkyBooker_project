@@ -28,6 +28,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter{
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)throws ServletException, IOException{
         
         String path = request.getServletPath();
+
+        //Bypassing only login and register endpoints
+
         if(path.contains("/api/login") || path.contains("/api/register")){
             filterChain.doFilter(request, response);
             return;
@@ -48,7 +51,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter{
 
             if(jwtUtils.validateToken(jwt, userDetails)){
                 UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(userDetails,null,userDetails.getAuthorities());
-                authToken.setDetails(userDetails);
 
                 authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
