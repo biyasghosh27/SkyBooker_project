@@ -6,7 +6,7 @@
     <li *ngFor="let b of bookings">
         <p>Booking ID: {{b.bookingId}}</p>
         <p>Flight Number: {{b.flight.flightNumber}}</p>
-        <p>Date: {{b.bookingDate}}</p>
+        <p>Date: {{b.bookingDate | date}}</p>
         <p>Status: {{b.status}}</p>
         <hr/>
     </li>
