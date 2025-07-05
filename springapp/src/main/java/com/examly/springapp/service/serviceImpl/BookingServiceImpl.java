@@ -24,12 +24,12 @@ public class BookingServiceImpl implements BookingService{
 
     @Override
     public Booking createBooking(Booking booking) {
-       Flight flight = booking.getFlight();
-       int alreadyBooked = bookingRepo.countPassengersByFlight(flight);
-       int newPassengers = booking.getNumberOfPassengers();
-       if(alreadyBooked+newPassengers > flight.getTotalSeats()){
-        throw new SeatsExceededException("Booking failed. Only " + (flight.getTotalSeats()-alreadyBooked) + " seats are left");
-       }
+    //    Flight flight = booking.getFlight();
+    //    int alreadyBooked = bookingRepo.countPassengersByFlight(flight);
+    //    int newPassengers = booking.getNumberOfPassengers();
+    //    if(alreadyBooked+newPassengers > flight.getTotalSeats()){
+    //     throw new SeatsExceededException("Booking failed. Only " + (flight.getTotalSeats()-alreadyBooked) + " seats are left");
+    //    }
        return bookingRepo.save(booking);
     }
 

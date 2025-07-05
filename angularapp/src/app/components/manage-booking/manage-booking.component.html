@@ -7,7 +7,7 @@
         <thead>
             <tr>
                 <th>Booking ID</th>
-                <th>Flight Number/th>
+                <th>Flight Number</th>
                 <th>User</th>
                 <th>Email</th>
                 <th>Date</th>
@@ -21,7 +21,7 @@
             <td>{{b.flight.flightNumber}}</td>
             <td>{{b.user.username}}</td>
             <td>{{b.user.email}}</td>
-            <td>{{b.bookingDate | date}}</td>
+            <td>{{b.bookingDate}}</td>
             <td>{{b.status}}</td>
             <td>
                 <button (click)="updateBookingStatus(b.bookingId,'Approved')">Approve</button>

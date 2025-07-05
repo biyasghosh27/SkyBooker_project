@@ -5,12 +5,12 @@
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/repository/BookingRepo.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/config/JwtAuthenticationFilter.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/exception/SeatsExceededException.java
-/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/BookingServiceImpl.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/controller/FlightController.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/config/SecurityConfig.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/model/User.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/model/Flight.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/controller/BookingController.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/serviceImpl/BookingServiceImpl.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/config/ProjectUserDetailsService.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/config/CorsConfig.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/SpringappApplication.java
