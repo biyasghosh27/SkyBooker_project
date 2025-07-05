@@ -33,7 +33,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter{
         //Bypassing only login and register endpoints
 
         if(path.contains("/api/login") || path.contains("/api/register")){
-            System.out.println("Skipping token filter for path: ' + path);
+            System.out.println("Skipping token filter for path: " + path);
             filterChain.doFilter(request, response);
             return;
         }
@@ -45,11 +45,15 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter{
 
            if(authHeader != null && authHeader.startsWith("Bearer ")){
             jwt = authHeader.substring(7);
+            System.out.println("Extracted JWT:" + jwt);
             email = jwtUtils.extractUsername(jwt);
+            System.out.println("Extracted Email:" + email);
            }
 
            if(email!=null && SecurityContextHolder.getContext().getAuthentication() == null){
             UserDetails userDetails = projectUserDetailsService.loadUserByUsername(email);
+
+            System.out.println("UserDetails found: " + userDetails.getUsername());
 
             if(jwtUtils.validateToken(jwt, userDetails)){
                 UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(userDetails,null,userDetails.getAuthorities());
@@ -57,7 +61,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter{
                 authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
                 SecurityContextHolder.getContext().setAuthentication(authToken);
+            }else{
+                System.out.println("JWT validation failed");
             }
+           }else{
+            System.out.println("Email is null or user already authenticated");
            }
            filterChain.doFilter(request, response);
     }
