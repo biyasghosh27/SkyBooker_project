@@ -11,7 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 body,html{
@@ -36,6 +36,8 @@ body,html{
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     text-align: center;
+    max-height: 80vh; /* limit height to 80% of viewport */
+    overflow-y: auto; /* add scroll inside the card  */
 }
 
 .center-card{
@@ -48,6 +50,8 @@ body,html{
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     text-align: center;
+    max-height: 80vh; /* limit height to 80% of viewport */
+    overflow-y: auto; /* add scroll inside the card  */
 }
 
 .center-card h2{
@@ -155,7 +159,7 @@ button:disabled{
     max-height: 80vh; /* limit height to 80% of viewport */
     overflow-y: auto; /* add scroll inside the card  */
     padding: 2rem;
-    background-color: rgba(255,255,255,0.95); /*white card*/
+    background-color: rgba(255,255,255,0.8); /*white card*/
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     margin: 2rem auto;
