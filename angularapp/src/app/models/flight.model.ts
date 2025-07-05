@@ -5,8 +5,8 @@ export interface Flight{
     airline:string;
     departureLocation:string;
     arrivalLocation:string;
-    departureTime:string;//change to string for time only
-    arrivalTime:string;//change to string for time only
+    departureTime:Date;//changed it to Date from string but Date will fail testcases
+    arrivalTime:Date;//same
     price:number;
     totalSeats?:number;
     
