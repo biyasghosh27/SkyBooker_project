@@ -73,7 +73,7 @@ CREATE TABLE `flight` (
   `price` double NOT NULL,
   `total_seats` int(11) NOT NULL,
   PRIMARY KEY (`flight_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -82,7 +82,7 @@ CREATE TABLE `flight` (
 
 LOCK TABLES `flight` WRITE;
 /*!40000 ALTER TABLE `flight` DISABLE KEYS */;
-INSERT INTO `flight` VALUES (1,'Air India','Mumbai','2024-10-21T12:00:00','Delhi','2024-10-21T10:00:00','AI202',7500,75);
+INSERT INTO `flight` VALUES (1,'Air India','Mumbai','2024-10-21T15:05','Delhi','2024-10-24T10:03','AI202',7500,79),(5,'Indigo','Lucknow','2025-07-06T14:17','London','2025-07-05T13:15','BK409',167000,120),(7,'Indigo','Mumbai','2025-07-08T13:44','Diu','2025-07-08T12:17','DF340',5600,30),(8,'Vistara','Kolkata','2025-07-05T13:21','Bhubaneswar','2025-07-06T11:17','CG490',4000,90);
 /*!40000 ALTER TABLE `flight` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -101,7 +101,7 @@ CREATE TABLE `user` (
   `user_role` varchar(255) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -110,7 +110,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (3,'biyas@example.com','9876543210','$2a$10$vdCldw1Eu1KeVNI.ExacheaHoAT3r.EpflEh.m0nzInPv6TWPa5qi','Traveller','bgfh'),(4,'biyassfqwe@example.com','9876543210','$2a$10$YTmDY/U5gjnnM9D9RutV3ujSNs6.ZkZ/qwM10NLDkG0wmeetlWtAm','Traveller','bgfh'),(5,'demo@example.com','9876543210','$2a$10$1ORdKEFDLXTUhzqQCpHR0.b87K0xKy/7QxK/WjPJZJgcmb5ouXuuW','Traveller','demoUser'),(6,'demo@example.com','9876543210','$2a$10$YL7FF5vkAYpaM/38liAB1ePRO1smYulqfBPLClYBVANK6H0P5S6AS','Traveller','demoUser'),(7,'dem32o@example.com','987632543210','$2a$10$yF6r5NJJsbaJ9N9FWzdP3.0S3BxaPYmnZG25..7BxoqtoWP9rkr1C','Traveller','demo32User'),(8,'demo@example.com','8240115019','$2a$10$qQvU5hmWQQ/3JG2CCA9CUevBPwZM6sr1aQsvvTKfXoKbQTAdSQH/y','Traveller','biyasghosh'),(9,'demo@example.com','8240115019','$2a$10$nCojpboLCIiXv665QUM9husYSZt3moqraYB7AEIlTjn6FczFpeGlC','Traveller','biyasghosh'),(10,'demo123@example.com','8240115019','$2a$10$ngCPmz8NfodI8qTMgcmxIO2.khjhsKSR7LnOwJayqqUw4bN24kE.O','Traveller','biyasghosh'),(11,'bg@example.com','8240115019','$2a$10$3omvgPjddNdLPprLca73I.p33gPuXVxBfZJllcX9DN8wk4XrA6Zm.','Admin','biyas'),(12,'bg@example.com','8240115019','$2a$10$jS0QzHZEfGbAKa2s.pjFIuEy4XrOQzX34t0MCTfnKI/Lhy0L5EySy','Admin','biyas'),(13,'bg123@example.com','8240115019','$2a$10$MQtqZaiHDz9UbLrpA4RgsehLyR5INwSShjz6BeojEqYei9TrvBEw.','Admin','bg'),(14,'bg2@example.com','8240115019','$2a$10$qv7IbmPSaRwxoVKBhnafF.jveMRSC79O0b8HYb/Bt0R02PTI7rURm','Traveller','bgbg'),(15,'biyas.ghosh@ltimindtree.com','8240115019','$2a$10$g2V52LjS8eC9pwfpKNqbFuk3Qv/A0M0IO0tZZNmFGNCQpHbJ7TGLO','Admin','uio'),(16,'bgbgbg@gmail.com','8240115019','$2a$10$CKofzIKbTG8N1UcKYk0UA.3Xr7k4axGvcXwaLy/ijj60V5nFnXMji','Traveller','bgbgbg');
+INSERT INTO `user` VALUES (17,'biyasghosh27@gmail.com','8240115019','$2a$10$nYD.mMzzWA5gIuS2Po6pD.9herZRonIdf9teSqnSYF9e2yK7stC2G','Admin','biyasghosh');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -123,4 +123,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-07-05  5:32:50
+-- Dump completed on 2025-07-05  5:47:50
