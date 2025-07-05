@@ -10,6 +10,7 @@ import com.examly.springapp.exception.SeatsExceededException;
 import com.examly.springapp.model.Booking;
 import com.examly.springapp.model.Flight;
 import com.examly.springapp.repository.BookingRepo;
+import com.examly.springapp.repository.FlightRepo;
 import com.examly.springapp.service.BookingService;
 
 @Service
@@ -18,19 +19,25 @@ public class BookingServiceImpl implements BookingService{
     private BookingRepo bookingRepo;
 
     @Autowired
+    private FlightRepo flightRepo;
+
+    @Autowired
     public void setBookingRepo(BookingRepo bookingRepo) {
         this.bookingRepo = bookingRepo;
     }
 
     @Override
     public Booking createBooking(Booking booking) {
-    //    Flight flight = booking.getFlight();
-    //    int alreadyBooked = bookingRepo.countPassengersByFlight(flight);
-    //    int newPassengers = booking.getNumberOfPassengers();
-    //    if(alreadyBooked+newPassengers > flight.getTotalSeats()){
-    //     throw new SeatsExceededException("Booking failed. Only " + (flight.getTotalSeats()-alreadyBooked) + " seats are left");
-    //    }
-       return bookingRepo.save(booking);
+        long flightId = booking.getFlight().getFlightId();
+        Flight flight = flightRepo.findById(flightId).orElseThrow(()->
+        new RuntimeException("Flight not found"));
+        int alreadyBooked = bookingRepo.countPassengersByFlight(flight);
+        int newPassengers = booking.getNumberOfPassengers();
+        if(alreadyBooked + newPassengers > flight.getTotalSeats()){
+            throw new SeatsExceededException("Booking failed. Only " + (flight.getTotalSeats()-alreadyBooked) + " seats are left");
+        }
+        booking.setFlight(flight);
+        return bookingRepo.save(booking);
     }
 
     @Override

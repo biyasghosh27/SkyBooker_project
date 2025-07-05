@@ -42,8 +42,10 @@ export class BookingFormComponent implements OnInit {
     };
 
     this.bookingService.createBooking(bookingPayload).subscribe({
-      next:()=>this.successMessage = 'Booking successful!',
-      error:()=>this.errorMessage = 'Booking failed'
+      next:(response)=>this.successMessage = 'Booking successful!',
+      error:(err)=>{
+        this.errorMessage = err.errorMessage || 'Booking failed. Please try again.';
+      }
     });
   }
 
