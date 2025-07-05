@@ -37,8 +37,8 @@ public class SecurityConfig {
             "/api/login",
             "/api/register",
             "/api/test/**",
-            "/api/flights/**",
-            "/api/bookings/**"
+            "/api/bookings/**",
+            "/api/flights/**"
         ).permitAll()
         .anyRequest().authenticated()
         )
