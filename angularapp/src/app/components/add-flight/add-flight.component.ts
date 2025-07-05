@@ -30,9 +30,8 @@ export class AddFlightComponent implements OnInit {
     this.flightService.getFlightById(id).subscribe({
       next:(data) => {
         this.flight = {
-      ...data,
-      departureTime:new Date(data.departureTime),
-      arrivalTime:new Date(data.arrivalTime)
+      ...data
+      //changed here where i was changing departure and arrival time to new Date because it was string
     };
   },
       error:()=>this.errorMessage = 'Failed to load flight.'
@@ -41,9 +40,8 @@ export class AddFlightComponent implements OnInit {
 
   addOrUpdateFlight(){
     const updatedFlight = {
-      ...this.flight,
-      departureTime:new Date(this.flight.departureTime).toISOString(),
-      arrivalTime:new Date(this.flight.arrivalTime).toISOString()
+      ...this.flight
+      //changed here where i was changing departure and arrival time to new Date because it was string
     };
     const serviceCall = this.isEditing ? this.flightService.updateFlight(this.flight.flightId, updatedFlight)
     : this.flightService.createFlight(updatedFlight);
