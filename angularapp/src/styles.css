@@ -26,8 +26,11 @@ body,html{
 
 .center-card{
     background-color: rgba(255,255,255,0.8);
-    padding: 30px;
-    max-width: 700px;
+    padding: 20px 30px;
+    max-width: 90vw;
+    /* 700px */
+    overflow-x: auto;
+    width: auto;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     text-align: center;
@@ -65,16 +68,22 @@ button{
 button:hover{
     background-color: #a11e35;
 }
-
+.tabble-wrapper{
+    overflow-x: auto;
+    max-width: 100%;
+}
 table{
     width:100%;
     border-collapse: collapse;
     margin-top: 20px;
+    table-layout: auto;
 }
 
 th,td{
-    padding: 10px;
+    padding: 8px 12px;
     border: 1px solid #ccc;
+    word-break: break-word;
+    max-width: 150px;
     text-align: center;
 }
 

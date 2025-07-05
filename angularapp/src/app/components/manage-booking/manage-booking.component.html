@@ -2,6 +2,7 @@
     <h2>All Bookings</h2>
     <p *ngIf="errorMessage">{{errorMessage}}</p>
     <p *ngIf="bookings.length === 0">No bookings available.</p>
+    <div class="table-wrapper">
     <table *ngIf="bookings.length > 0">
         <thead>
             <tr>
@@ -29,4 +30,5 @@
             </tr>
         </tbody>
     </table>
+</div>
 </div>
