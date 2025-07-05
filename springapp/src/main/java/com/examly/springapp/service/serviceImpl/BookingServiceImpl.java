@@ -1,4 +1,4 @@
-package com.examly.springapp.service;
+package com.examly.springapp.service.serviceImpl;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,6 +10,7 @@ import com.examly.springapp.exception.SeatsExceededException;
 import com.examly.springapp.model.Booking;
 import com.examly.springapp.model.Flight;
 import com.examly.springapp.repository.BookingRepo;
+import com.examly.springapp.service.BookingService;
 
 @Service
 public class BookingServiceImpl implements BookingService{
