@@ -12,8 +12,11 @@
         <div *ngIf="b.status === 'Approved'" class="approved">
             Booking Confirmed for {{userEmail}}
         </div>
-        <div *ngIf="b.status === 'Approved'" class="approved">
-            Booking Confirmed for {{userEmail}}
+        <div *ngIf="b.status === 'Rejected'" class="rejected">
+            Booking Rejected for {{userEmail}}
+        </div>
+        <div *ngIf="b.status !== 'Rejected' && b.status !== 'Approved'" class="pending">
+            Booking Pending for {{userEmail}}
         </div>
     </li>
     </ul>
