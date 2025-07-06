@@ -106,6 +106,7 @@ public class BookingServiceImpl implements BookingService{
         flightRepo.save(flight);//persist the seat change
 
         //increading the seats again after the status is rejected
+        //only once its restoring not if already rejected
         if(booking.getStatus().equalsIgnoreCase("Rejected") && !existing.getStatus().equalsIgnoreCase("Rejected")){
             int newAvailableSeats = flight.getTotalSeats() + existing.getNumberOfPassengers();
             flight.setTotalSeats(newAvailableSeats);
