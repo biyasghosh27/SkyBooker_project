@@ -24,7 +24,8 @@
 </div>
 <div class="status-modal" *ngIf="showModal">
     <div class="modal content">
-        <input type="checkbox" id="closeModal" (change)="showModal"
+        <input type="checkbox" id="closeModal" (change)="showModal = false" hidden>
+        <label for="closeModal" class="close-button">x</label>
         <p>{{modalMessage}}</p>
     </div>
 </div>
