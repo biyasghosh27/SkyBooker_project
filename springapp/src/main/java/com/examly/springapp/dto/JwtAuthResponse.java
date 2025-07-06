@@ -4,10 +4,31 @@ public class JwtAuthResponse {
     private String token;
     private int userId;
     private String userRole;
+    private String username;
+    private String email;
     
     public String getToken() {
         return token;
     }
+    public String getUsername() {
+        return username;
+    }
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public JwtAuthResponse(String token, int userId, String userRole, String username, String email) {
+        this.token = token;
+        this.userId = userId;
+        this.userRole = userRole;
+        this.username = username;
+        this.email = email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }   
     public void setToken(String token) {
         this.token = token;
     }
@@ -18,11 +39,6 @@ public class JwtAuthResponse {
         this.userId = userId;
     }
     
-    public JwtAuthResponse(String token, int userId, String userRole) {
-        this.token = token;
-        this.userId = userId;
-        this.userRole = userRole;
-    }
     public JwtAuthResponse() {
     }
     public String getUserRole() {
