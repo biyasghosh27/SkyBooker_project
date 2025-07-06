@@ -28,11 +28,12 @@ export class AuthService {
   }
 
   //store user details in localstorage  + token too
-  storeAuthData(token:string,userId:number,userRole:string):void{
+  storeAuthData(token:string,userId:number,userRole:string,username:string,email:string):void{
     localStorage.setItem('token',token);
     localStorage.setItem('userId',userId.toString());
     localStorage.setItem('userRole',userRole);
-    localStorage.setItem('username',this.extractUsernameFromEmail());
+    localStorage.setItem('username',username);
+    localStorage.setItem('userEmail',email);
   }
 
   //check login status
@@ -63,14 +64,7 @@ export class AuthService {
   //logout
   logout():void{
     localStorage.clear();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/login']); //THIS ROUTING WAS FAILING TEST CASES
   }
-  //THIS ROUTING WAS FAILING TEST CASES
-
-  private extractUsernameFromEmail():string{
-    const email = localStorage.getItem('email');
-    return email ? email.split('@')[0]:'User';
-  }
-
   
 }

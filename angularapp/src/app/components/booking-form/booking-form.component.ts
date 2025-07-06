@@ -11,6 +11,7 @@ import { BookingService } from 'src/app/services/booking.service';
 export class BookingFormComponent implements OnInit {
 
   flightId!:number;
+  userEmail = localStorage.getItem('userEmail');
   booking:any = {
     numberOfPassengers:1,
     status:'Pending',
@@ -42,7 +43,7 @@ export class BookingFormComponent implements OnInit {
     };
 
     this.bookingService.createBooking(bookingPayload).subscribe({
-      next:(response)=>this.successMessage = 'Booking successful!',
+      next:(response)=>this.successMessage = `Booking successful for ${this.userEmail}`,
       error:(err)=>{
         this.errorMessage = err.errorMessage || 'Booking failed. Please try again.';
       }

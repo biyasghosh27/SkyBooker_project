@@ -24,9 +24,10 @@ export class LoginComponent implements OnInit {
   login():void{
    this.authService.login(this.credentials).subscribe({
     next:(res)=>{
-      this.authService.storeAuthData(res.token, res.userId, res.userRole);
+      this.authService.storeAuthData(res.token, res.userId, res.userRole, res.username, res.email);
       this.router.navigate(['/home']).then(()=>
       window.location.reload());
+      //needed when not working properly
     },
     error:()=>{
       this.loginError = 'Invalid email or password';
