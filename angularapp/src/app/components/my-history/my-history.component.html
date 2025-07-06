@@ -22,3 +22,9 @@
     </li>
     </ul>
 </div>
+<div class="status-modal" *ngIf="showModal">
+    <div class="modal content">
+        <input type="checkbox" id="closeModal" (change)="showModal"
+        <p>{{modalMessage}}</p>
+    </div>
+</div>
