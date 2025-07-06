@@ -4,11 +4,17 @@
     <p *ngIf="bookings.length === 0">No bookings found.</p>
     <ul *ngIf="bookings.length > 0">
     <li *ngFor="let b of bookings">
-        <p>Booking ID: {{b.bookingId}}</p>
-        <p>Flight Number: {{b.flight.flightNumber}}</p>
-        <p>Date: {{b.bookingDate | date}}</p>
-        <p>Status: {{b.status}}</p>
+        <p><strong>Booking ID:</strong> {{b.bookingId}}</p>
+        <p><strong>Flight Number:</strong> {{b.flight.flightNumber}}</p>
+        <p><strong>Date:</strong> {{b.bookingDate | date}}</p>
+        <p><strong>Status:</strong> {{b.status}}</p>
         <hr/>
+        <div *ngIf="b.status === 'Approved'" class="approved">
+            Booking Confirmed for {{userEmail}}
+        </div>
+        <div *ngIf="b.status === 'Approved'" class="approved">
+            Booking Confirmed for {{userEmail}}
+        </div>
     </li>
     </ul>
 </div>

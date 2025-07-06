@@ -10,9 +10,10 @@ import { BookingService } from 'src/app/services/booking.service';
 export class MyHistoryComponent implements OnInit {
 
   bookings:any[] = [];
-  errorMessage = '';
-  userId:number | null = null;
-
+  errorMessage:string = '';
+  userId:number = Number(localStorage.getItem('userId'));
+  userEmail:string = String(localStorage.getItem('userEmail'));
+  
   constructor(private bookingService:BookingService,
     private authService:AuthService) { }
 

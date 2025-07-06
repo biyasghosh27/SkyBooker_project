@@ -107,6 +107,8 @@ public class BookingServiceImpl implements BookingService{
         flightRepo.save(flight);//persist the seat change
 
         //updating booking info
+        //we are not using setters for user or flight here because they are not updating in the logic
+        //its the same user and same flight assigned to this booking
         existing.setNumberOfPassengers(newCount);
         existing.setStatus(booking.getStatus());
         existing.setBookingDate(booking.getBookingDate());
