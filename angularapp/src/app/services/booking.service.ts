@@ -35,7 +35,8 @@ export class BookingService {
     return this.http.delete(`${this.baseUrl}/bookings/${id}`);
   }
 
-  updateBookingStatus(id:number,status:string):Observable<any>{  
-    return this.http.put(`${this.baseUrl}/bookings/${id}`,{status});
-  }
+  //NOT NEEDED ANYMORE
+  // updateBookingStatus(id:number,status:string):Observable<any>{  
+  //   return this.http.put(`${this.baseUrl}/bookings/${id}`,{status});
+  // }
 }

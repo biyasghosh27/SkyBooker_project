@@ -5,7 +5,7 @@
     <ul *ngIf="bookings.length > 0">
     <li *ngFor="let b of bookings" class="booking-card">
         <p><strong>Booking ID:</strong> {{b.bookingId}}</p>
-        <p><strong>Flight Number:</strong> {{b.flight.flightNumber}}</p>
+        <p><strong>Flight Number:</strong> {{b.flight?.flightNumber}}</p>
         <p><strong>Date:</strong> {{b.bookingDate | date}}</p>
         <p><strong>Status:</strong> {{b.status}}</p>
         <hr/>

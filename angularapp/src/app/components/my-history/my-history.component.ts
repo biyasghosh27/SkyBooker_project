@@ -24,7 +24,9 @@ export class MyHistoryComponent implements OnInit {
   }
 
   loadUserBookings(){
-    this.bookingService.getBookingsByUserId(this.userId!).subscribe({
+    const userId = this.authService.getUserId();
+
+    this.bookingService.getBookingsByUserId(userId).subscribe({
       next:(data)=>this.bookings = data,
       error:()=>this.errorMessage = 'Failed to load your bookings.'
     });

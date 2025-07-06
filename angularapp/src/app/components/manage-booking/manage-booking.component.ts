@@ -31,8 +31,11 @@ export class ManageBookingComponent implements OnInit {
       this.errorMessage = 'Booking not found';
       return;
     }
-    const updatedBooking = 
-    this.bookingService.updateBookingStatus(bookingId,status).subscribe({
+    const updatedBooking = {
+      ...booking,
+      status:status
+    }
+    this.bookingService.updateBooking(bookingId,updatedBooking).subscribe({
       next:()=>this.loadBookings(),
       error:()=>this.errorMessage = 'Failed to update booking status.'
     });
