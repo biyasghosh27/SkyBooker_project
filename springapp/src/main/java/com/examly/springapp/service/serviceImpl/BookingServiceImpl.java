@@ -101,10 +101,16 @@ public class BookingServiceImpl implements BookingService{
         if(totalBooked + change > flight.getTotalSeats()){
             throw new SeatsExceededException("Cannot update. Only " + (flight.getTotalSeats()-totalBooked) + " additional seats available.");
         }
-
         //adjusting the total seats
         flight.setTotalSeats(flight.getTotalSeats()-change);//reduce if increase, increase if decrease
         flightRepo.save(flight);//persist the seat change
+
+        //increading the seats again after the status is rejected
+        if(booking.getStatus().equalsIgnoreCase("Rejected") && !existing.getStatus().equalsIgnoreCase("Rejected")){
+            int newAvailableSeats = flight.getTotalSeats() + existing.getNumberOfPassengers();
+            flight.setTotalSeats(newAvailableSeats);
+            flightRepo.save(flight);
+        }
 
         //updating booking info
         //we are not using setters for user or flight here because they are not updating in the logic

@@ -43,7 +43,7 @@ CREATE TABLE `booking` (
   KEY `FKkgseyy7t56x7lkjgu3wah5s3t` (`user_id`),
   CONSTRAINT `FK546eybei9q7dsna94vryofrbr` FOREIGN KEY (`flight_id`) REFERENCES `flight` (`flight_id`),
   CONSTRAINT `FKkgseyy7t56x7lkjgu3wah5s3t` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -52,7 +52,7 @@ CREATE TABLE `booking` (
 
 LOCK TABLES `booking` WRITE;
 /*!40000 ALTER TABLE `booking` DISABLE KEYS */;
-INSERT INTO `booking` VALUES (1,NULL,0,'Approved',8,27),(2,NULL,0,'Rejected',7,27),(3,NULL,0,'Approved',1,27);
+INSERT INTO `booking` VALUES (1,NULL,0,'Approved',8,27),(2,NULL,0,'Rejected',7,27),(3,NULL,0,'Approved',1,27),(4,'2025-07-06T18:59:10.545Z',2,'Pending',5,27),(5,'2025-07-06T18:59:23.866Z',1,'Pending',8,27);
 /*!40000 ALTER TABLE `booking` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -83,7 +83,7 @@ CREATE TABLE `flight` (
 
 LOCK TABLES `flight` WRITE;
 /*!40000 ALTER TABLE `flight` DISABLE KEYS */;
-INSERT INTO `flight` VALUES (1,'Air India','Mumbai','2024-10-21T15:05','Delhi','2024-10-24T10:03','AI202',7500,79),(5,'Indigo','Lucknow','2025-07-06T14:17','London','2025-07-05T13:15','BK409',167000,120),(7,'Indigo','Mumbai','2025-07-08T13:44','Diu','2025-07-08T12:17','DF340',5600,30),(8,'Vistara','Kolkata','2025-07-05T13:21','Bhubaneswar','2025-07-06T11:17','CG490',4000,90),(9,'SpiceJet','Mumbai','2025-07-07-T12:00:00','Delhi','2025-07-07-T10:00:00','SG123',40000,60);
+INSERT INTO `flight` VALUES (1,'Air India','Mumbai','2024-10-21T15:05','Delhi','2024-10-24T10:03','AI202',7500,79),(5,'Indigo','Lucknow','2025-07-06T14:17','London','2025-07-05T13:15','BK409',167000,118),(7,'Indigo','Mumbai','2025-07-08T13:44','Diu','2025-07-08T12:17','DF340',5600,30),(8,'Vistara','Kolkata','2025-07-05T13:21','Bhubaneswar','2025-07-06T11:17','CG490',4000,89),(9,'SpiceJet','Mumbai','2025-07-07-T12:00:00','Delhi','2025-07-07-T10:00:00','SG123',40000,60);
 /*!40000 ALTER TABLE `flight` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -124,4 +124,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-07-06 18:50:58
+-- Dump completed on 2025-07-06 19:05:56
