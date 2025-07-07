@@ -43,7 +43,7 @@ CREATE TABLE `booking` (
   KEY `FKkgseyy7t56x7lkjgu3wah5s3t` (`user_id`),
   CONSTRAINT `FK546eybei9q7dsna94vryofrbr` FOREIGN KEY (`flight_id`) REFERENCES `flight` (`flight_id`),
   CONSTRAINT `FKkgseyy7t56x7lkjgu3wah5s3t` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -52,7 +52,7 @@ CREATE TABLE `booking` (
 
 LOCK TABLES `booking` WRITE;
 /*!40000 ALTER TABLE `booking` DISABLE KEYS */;
-INSERT INTO `booking` VALUES (4,'2025-07-06T18:59:10.545Z',2,'Approved',5,27),(5,'2025-07-06T18:59:23.866Z',1,'Rejected',8,27),(6,'2025-07-06T19:30:46.075Z',1,'Rejected',9,27),(7,'2025-07-06T19:47:31.977Z',0,'Rejected',7,27),(8,'2025-07-06T19:47:31.977Z',5,'Rejected',7,27);
+INSERT INTO `booking` VALUES (4,'2025-07-06T18:59:10.545Z',2,'Approved',5,27),(5,'2025-07-06T18:59:23.866Z',1,'Rejected',8,27),(6,'2025-07-06T19:30:46.075Z',1,'Rejected',9,27),(7,'2025-07-06T19:47:31.977Z',0,'Rejected',7,27),(8,'2025-07-06T19:47:31.977Z',5,'Rejected',7,27),(9,'2025-07-07T14:16:33.745Z',1,'Rejected',7,30);
 /*!40000 ALTER TABLE `booking` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -102,7 +102,7 @@ CREATE TABLE `user` (
   `user_role` varchar(255) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,7 +111,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (26,'demo@example.com','8240115019','$2a$10$eHY1jTbNnyP8qgCBEo56uOCiA6OOWbP3R3y1H.iP/WxhU4ym8w6ZG','Admin','biyasghosh'),(27,'user@gmail.com','8240115019','$2a$10$yFRItYFJBgfDC7wrXY/TnewF1LoMg5KRIbxh3BbtsUJuW0XYAcidq','Traveller','bguser');
+INSERT INTO `user` VALUES (26,'demo@example.com','8240115019','$2a$10$eHY1jTbNnyP8qgCBEo56uOCiA6OOWbP3R3y1H.iP/WxhU4ym8w6ZG','Admin','biyasghosh'),(27,'user@gmail.com','8240115019','$2a$10$yFRItYFJBgfDC7wrXY/TnewF1LoMg5KRIbxh3BbtsUJuW0XYAcidq','Traveller','bguser'),(28,'nain@gmail.com','7004794034','$2a$10$TkD8y2pnzRuAoXfxn.LOi.WPI7/Ig6Aee4.UJZT1tdUX.gG9l8yR6','Traveller','nain'),(29,'nain@gmail.com','7004794034','$2a$10$AO56Qtdg6oL17ezK1q.7kewpAyCGFc6lY/WH25v/siCJDYlQmdHvW','Traveller','nain'),(30,'vig@gmail.com','7004794034','$2a$10$axW7wsPkez1IQLN/5dLVE.hy12DA5JRp3b5Oquw/yIpZTtNCxiPs.','Traveller','vig ');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -124,4 +124,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-07-07 14:04:15
+-- Dump completed on 2025-07-07 14:19:13
