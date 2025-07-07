@@ -13,7 +13,7 @@
     <input type="password" name="password" [(ngModel)]="user.password" id="password" #password="ngModel" placeholder="Password" required/>
     <div class="error-message" *ngIf="password.invalid && (password.touched || password.dirty)"> 
         <small *ngIf="password?.hasError('required')">Password is required</small>
-        <small *ngIf="passwordPatternError">Password must include at least one uppercase letter, one lowercase letter, one digit, and one special character</small>
+        <small *ngIf="passwordPatternError">Password must include at least one uppercase letter, one lowercase letter, one digit, and one special character and at least 8 characters long</small>
     </div>
     <input type="password" name="confirmPassword" [(ngModel)]="confirmPassword" placeholder="Confirm Password" #confirmPasswordField="ngModel" required/>
     <div class="error-message" *ngIf="confirmPasswordField.invalid && (confirmPasswordField.touched || confirmPasswordField.dirty)"> 
