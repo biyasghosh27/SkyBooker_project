@@ -83,7 +83,7 @@ CREATE TABLE `flight` (
 
 LOCK TABLES `flight` WRITE;
 /*!40000 ALTER TABLE `flight` DISABLE KEYS */;
-INSERT INTO `flight` VALUES (1,'Air India','Mumbai','2024-10-21T15:05','Delhi','2024-10-24T10:03','AI202',7500,79),(5,'Indigo','Lucknow','2025-07-06T14:17','London','2025-07-05T13:15','BK409',167000,118),(7,'Indigo','Mumbai','2025-07-08T13:44','Diu','2025-07-08T12:17','DF340',5600,30),(8,'Vistara','Kolkata','2025-07-05T13:21','Bhubaneswar','2025-07-06T11:17','CG490',4000,91),(9,'SpiceJet','Mumbai','2025-07-07-T12:00:00','Delhi','2025-07-07-T10:00:00','SG123',40000,60),(10,'Vistara','Lucknow','2025-07-01T02:24','Dhaka','2025-07-01T00:22','TR456',3400,60);
+INSERT INTO `flight` VALUES (1,'Air India','Mumbai','2024-10-21T15:05','Delhi','2024-10-24T10:03','AI202',7500,79),(5,'Indigo','Lucknow','2025-07-06T14:17','Dublin','2025-07-05T13:15','BK409',167000,120),(7,'Indigo','Mumbai','2025-07-08T13:44','Diu','2025-07-08T12:17','DF340',5600,30),(8,'Vistara','Kolkata','2025-07-05T13:21','Bhubaneswar','2025-07-06T11:17','CG490',4000,91),(9,'SpiceJet','Mumbai','2025-07-07-T12:00:00','Delhi','2025-07-07-T10:00:00','SG123',40000,60);
 /*!40000 ALTER TABLE `flight` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -124,4 +124,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-07-07 17:51:45
+-- Dump completed on 2025-07-07 18:06:47

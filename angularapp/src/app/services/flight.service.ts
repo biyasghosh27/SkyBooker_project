@@ -27,7 +27,7 @@ export class FlightService {
     return this.http.put(`${this.baseUrl}/flights/${id}`,flight);
   }
 
-  deleteFlight(id:number):Observable<any>{
-    return this.http.delete(`${this.baseUrl}/flights/${id}`);
+  deleteFlight(id:number):Observable<void>{
+    return this.http.delete<void>(`${this.baseUrl}/flights/${id}`);
   }
 }
