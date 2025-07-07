@@ -52,7 +52,7 @@ CREATE TABLE `booking` (
 
 LOCK TABLES `booking` WRITE;
 /*!40000 ALTER TABLE `booking` DISABLE KEYS */;
-INSERT INTO `booking` VALUES (4,'2025-07-06T18:59:10.545Z',2,'Approved',5,27),(5,'2025-07-06T18:59:23.866Z',1,'Rejected',8,27),(6,'2025-07-06T19:30:46.075Z',1,'Rejected',9,27),(7,'2025-07-06T19:47:31.977Z',0,'Rejected',7,27),(8,'2025-07-06T19:47:31.977Z',5,'Approved',7,27),(9,'2025-07-07T14:16:33.745Z',1,'Rejected',7,30);
+INSERT INTO `booking` VALUES (4,'2025-07-06T18:59:10.545Z',2,'Approved',5,27),(5,'2025-07-06T18:59:23.866Z',1,'Rejected',8,27),(7,'2025-07-06T19:47:31.977Z',0,'Rejected',7,27),(8,'2025-07-06T19:47:31.977Z',5,'Approved',7,27),(9,'2025-07-07T14:16:33.745Z',1,'Rejected',7,30);
 /*!40000 ALTER TABLE `booking` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -74,7 +74,7 @@ CREATE TABLE `flight` (
   `price` double NOT NULL,
   `total_seats` int(11) NOT NULL,
   PRIMARY KEY (`flight_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -83,7 +83,7 @@ CREATE TABLE `flight` (
 
 LOCK TABLES `flight` WRITE;
 /*!40000 ALTER TABLE `flight` DISABLE KEYS */;
-INSERT INTO `flight` VALUES (1,'Air India','Mumbai','2024-10-21T15:05','Delhi','2024-10-24T10:03','AI202',7500,79),(5,'Indigo','Lucknow','2025-07-06T14:17','Dublin','2025-07-05T13:15','BK409',167000,120),(7,'Indigo','Mumbai','2025-07-08T13:44','Diu','2025-07-08T12:17','DF340',5600,30),(8,'Vistara','Kolkata','2025-07-05T13:21','Bhubaneswar','2025-07-06T11:17','CG490',4000,91),(9,'SpiceJet','Mumbai','2025-07-07-T12:00:00','Delhi','2025-07-07-T10:00:00','SG123',40000,60);
+INSERT INTO `flight` VALUES (1,'Air India','Mumbai','2024-10-21T15:05','Delhi','2024-10-24T10:03','AI202',7500,79),(5,'Indigo','Lucknow','2025-07-06T14:17','Dublin','2025-07-05T13:15','BK409',167000,120),(7,'Indigo','Mumbai','2025-07-08T13:44','Diu','2025-07-08T12:17','DF340',5600,30),(8,'Vistara','Kolkata','2025-07-05T13:21','Bhubaneswar','2025-07-06T11:17','CG490',4000,91),(12,'SpiceJet','Kolkata','2025-07-02T23:43','Bhubaneswar','2025-07-01T23:42','DM890',5600,56);
 /*!40000 ALTER TABLE `flight` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -124,4 +124,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-07-07 18:06:47
+-- Dump completed on 2025-07-07 18:21:41

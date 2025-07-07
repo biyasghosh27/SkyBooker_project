@@ -1,9 +1,13 @@
 package com.examly.springapp.model;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Flight {
@@ -19,6 +23,15 @@ public class Flight {
     private double price;
     private int totalSeats;
     
+    // @OneToMany(mappedBy = "flight", cascade = CascadeType.ALL, orphanRemoval = true)
+    // private List<Booking> booking;
+    
+    // public List<Booking> getBooking() {
+    //     return booking;
+    // }
+    // public void setBooking(List<Booking> booking) {
+    //     this.booking = booking;
+    // }
     public Long getFlightId() {
         return flightId;
     }
@@ -73,8 +86,11 @@ public class Flight {
     public void setTotalSeats(int totalSeats) {
         this.totalSeats = totalSeats;
     }
+    
+    public Flight() {
+    }
     public Flight(Long flightId, String flightNumber, String airline, String departureLocation, String arrivalLocation,
-        String departureTime, String arrivalTime, double price, int totalSeats) {
+            String departureTime, String arrivalTime, double price, int totalSeats) {
         this.flightId = flightId;
         this.flightNumber = flightNumber;
         this.airline = airline;
@@ -84,7 +100,5 @@ public class Flight {
         this.arrivalTime = arrivalTime;
         this.price = price;
         this.totalSeats = totalSeats;
-    }
-    public Flight() {
     }
 }
