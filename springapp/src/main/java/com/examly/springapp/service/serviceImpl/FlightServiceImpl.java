@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.metrics.jfr.FlightRecorderApplicationStartup;
 import org.springframework.stereotype.Service;
 
+import com.examly.springapp.model.Booking;
 import com.examly.springapp.model.Flight;
+import com.examly.springapp.repository.BookingRepo;
 import com.examly.springapp.repository.FlightRepo;
 import com.examly.springapp.service.FlightService;
 
@@ -17,6 +19,9 @@ public class FlightServiceImpl implements FlightService{
 
     @Autowired
     FlightRepo flightRepo;
+
+    @Autowired
+    BookingRepo bookingRepo;
 
     // List<Flight> flightListpre = new ArrayList<>();
     List<Flight> flightList = new ArrayList<>();
@@ -69,6 +74,9 @@ public class FlightServiceImpl implements FlightService{
         if(optionalFlight.isEmpty()){
             return false;
         }
+        //deleting bookings manually before deleting the flight
+        List<Booking> bookings = bookingRepo.findByFlightFlightId(flightId);
+        bookingRepo.deleteAll(bookings);
         Flight flight = optionalFlight.get();
         flightRepo.delete(flight);
         return true;

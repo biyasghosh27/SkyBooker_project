@@ -16,4 +16,5 @@ public interface BookingRepo extends JpaRepository<Booking,Long>{
     int countPassengersByFlight(@Param("flight") Flight flight);
 
     List<Booking> findByUserUserId(int userId);
+    List<Booking> findByFlightFlightId(Long flightId);
 }
