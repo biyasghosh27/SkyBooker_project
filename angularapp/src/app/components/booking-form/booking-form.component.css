@@ -1,25 +1,78 @@
-.plane-container{
+.sky {
     position: fixed;
-    top:50%;
-    left: -100px;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     z-index: 9999;
     pointer-events: none;
-}
-
-.plane{
-    font-size: 40px;
-    animation: flyAcross 3s ease-in-out forwards;
-}
-
-@keyframes flyAcross{
-    0%{
-        transform: translateX(0)rotate(0deg);
+    overflow: visible;
+  }
+  
+  .orbit {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    margin-left: -250px;
+    margin-top: -250px;
+    animation: rotateAround 4s linear 2, flyAway 2s ease-in-out 8s forwards;
+  }
+  
+  .plane-with-trail {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+  }
+  
+  .vapor {
+    margin-right: 10px;
+    font-size: 2rem;
+    animation: vaporFade 6s ease-out forwards;
+  }
+  
+  .plane {
+    transform: rotate(45deg);
+  }
+  
+  /* Make the orbit loop around center */
+  @keyframes rotateAround {
+    from {
+      transform: rotate(0deg);
     }
-    50%{
-        transform: translateX(50vw)
-        translateY(-30px)rotate(-5deg);
+    to {
+      transform: rotate(360deg);
     }
-    100%{
-        transform: translateX();
+  }
+  
+  /* Fade vapor out */
+  @keyframes vaporFade {
+    0% {
+      opacity: 1;
     }
-}
+    80% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  /* Fly away after orbit */
+  @keyframes flyAway {
+    0% {
+      top: 50%;
+      left: 50%;
+    }
+    100% {
+      top: -200px;
+      left: 150vw;
+      opacity: 0;
+    }
+  }
+  

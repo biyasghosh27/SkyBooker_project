@@ -19,6 +19,7 @@ export class BookingFormComponent implements OnInit {
   };
   successMessage = '';
   errorMessage = '';
+  showPlaneAnimation:boolean = false;
 
   constructor(private bookingService:BookingService,
     private authService:AuthService,
@@ -43,7 +44,21 @@ export class BookingFormComponent implements OnInit {
     };
 
     this.bookingService.createBooking(bookingPayload).subscribe({
-      next:(response)=>this.successMessage = `Booking successful for ${this.userEmail}`,
+      next:(response)=>{
+        this.successMessage = `Booking successful for ${this.userEmail}`;
+        this.showPlaneAnimation = true;
+        
+        //play sound
+        const audio = new Audio();
+        audio.src = 'assets/sounds/';
+        audio.load();
+        audio.play();
+
+        //hide animation after 3 seconds
+        setTimeout(()=>{
+          this.showPlaneAnimation = false;
+        },8000);
+      },
       error:(err)=>{
         this.errorMessage = err.errorMessage || 'Booking failed. Please try again.';
       }

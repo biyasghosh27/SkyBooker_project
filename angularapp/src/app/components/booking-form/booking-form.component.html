@@ -10,7 +10,12 @@
     <p>{{successMessage}}</p>
     </div>
     <p *ngIf="errorMessage">{{errorMessage}}</p>
-    <div class="plane-container" *ngIf="showPlaneAnimation">
-        <div class="plane">✈️</div>
-    </div>
+    <div class="sky" *ngIf="showPlaneAnimation">
+        <div class="orbit">
+          <div class="plane-with-trail">
+            <div class="vapor">💨</div>
+            <div class="plane">✈️</div>
+          </div>
+        </div>
+      </div>
 </div>
