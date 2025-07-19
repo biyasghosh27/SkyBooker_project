@@ -21,6 +21,10 @@ export class NavbarComponent implements OnInit {
     this.isLoggedIn = this.authService.isLoggedIn();
     this.userRole = localStorage.getItem('userRole')||'';
     this.userName = localStorage.getItem('username')||'';
+
+  const savedMode = localStorage.getItem('darkMode');
+  this.isDarkMode = savedMode === 'true';
+  this.applyDarkMode();
   }
 
   toggleDropdown():void{
@@ -45,5 +49,21 @@ export class NavbarComponent implements OnInit {
       this.router.navigate(['/login']);
     },100);   
   }
+
+  isDarkMode = false;
+
+  toggleDarkMode() {
+  this.isDarkMode = !this.isDarkMode;
+  localStorage.setItem('darkMode', String(this.isDarkMode));
+  this.applyDarkMode();
+}
+
+applyDarkMode() {
+  if (this.isDarkMode) {
+    document.body.classList.add('dark-mode');
+  } else {
+    document.body.classList.remove('dark-mode');
+  }
+}
 
 }

@@ -6,6 +6,11 @@
             <li><a routerLink="/register">Register</a></li>
             <li><a routerLink="/login">Login</a></li>
             <li><a routerLink="/home">Home</a></li>
+            <li>
+            <button (click)="toggleDarkMode()" class="dark-toggle">
+                {{ isDarkMode ? '🌞 Light Mode' : '🌙 Dark Mode' }}
+              </button>
+            </li> 
         </ng-container>
         <!-- authenticated -->
         <ng-container *ngIf="isLoggedIn">
@@ -32,6 +37,12 @@
                 <li><a routerLink="/flight-list">Book Flight</a></li>
                 <li><a routerLink="/my-history">History</a></li>
             </ng-container>
+            <!-- dark mode -->
+            <li>
+                <button (click)="toggleDarkMode()" class="dark-toggle">
+                    {{ isDarkMode ? '🌞 Light Mode' : '🌙 Dark Mode' }}
+                  </button>
+                </li>
             <!-- logout -->
             <li><button (click)="confirmLogout()">Logout</button></li>
         </ng-container>
