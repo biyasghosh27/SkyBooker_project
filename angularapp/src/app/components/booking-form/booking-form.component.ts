@@ -49,10 +49,9 @@ export class BookingFormComponent implements OnInit {
         this.showPlaneAnimation = true;
         
         //play sound
-        const audio = new Audio();
-        // audio.src = 'assets/sounds/';
-        // audio.load();
-        // audio.play();
+        const audio = new Audio('http://commondatastorage.googleapis.com/codeskulptor-demos/riceracer_assets/music/start.ogg');
+        audio.load();
+        audio.play();
 
         //hide animation after 3 seconds
         setTimeout(()=>{
