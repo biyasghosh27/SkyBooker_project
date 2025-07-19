@@ -190,7 +190,7 @@ button:disabled{
   .plane {
     position: absolute;
     font-size: 2.5rem;
-    animation: circleAndFly 10s ease-in-out forwards;
+    animation: circleAndFly 6s ease-in-out forwards;
   }
   
   .vapor {
@@ -224,23 +224,11 @@ button:disabled{
       top: 50%;
       left: 50%;
     }
-    50% {
-      top: 40%;
-      left: 65%;
-    }
     60% {
       top: 30%;
-      left: 50%;
-    }
-    70% {
-      top: 40%;
-      left: 35%;
+      left: 75%;
     }
     80% {
-      top: 50%;
-      left: 50%;
-    }
-    90% {
       top: 10%;
       left: 100%;
       opacity: 1;
@@ -262,28 +250,7 @@ button:disabled{
       transform: translateY(10px);
     }
   }
-  
 
-  
-  :root {
-    --bg-color: #ffffff;
-    --text-color: #000000;
-    --card-bg: #f5f5f5;
-  }
-  
-  body.dark-mode {
-    --bg-color: #121212;
-    --text-color: #f8f8f8;
-    --card-bg: #1e1e1e;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-  }
-  
-  /* Apply variables across your UI */
-  body, app-root, .container, .card, .form, input, select, textarea {
-    background-color: var(--bg-color) !important;
-    color: var(--text-color) !important;
-  }
   
   /* Plane Glow Effect in Dark Mode */
   body.dark-mode .plane {
@@ -294,6 +261,281 @@ button:disabled{
     filter: drop-shadow(0 0 2px #00ffff);
   }
   
+  /* ====== NEON PINK DARK MODE THEME ====== */
+body.dark-theme {
+  --bg-color: #121212;
+  --text-color: #ff8edb;
+  --card-bg: #1a1a1a;
+  --accent-color: #ff4fc4;
+  --input-bg: #292929;
+  --input-border: #ff8edb;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+body.dark-theme,
+body.dark-theme app-root,
+body.dark-theme .container,
+body.dark-theme .card,
+body.dark-theme .form,
+body.dark-theme input,
+body.dark-theme select,
+body.dark-theme textarea {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--input-border) !important;
+}
+
+/* Navbar Styling */
+body.dark-theme .navbar {
+  background-color: #1e1e1e !important;
+  color: var(--text-color) !important;
+}
+
+body.dark-theme .navbar a {
+  color: var(--accent-color);
+}
+body.dark-theme .navbar a:hover {
+  color: white;
+  border-bottom: 2px solid var(--accent-color);
+  text-shadow: 0 0 6px var(--accent-color);
+}
+
+/* Buttons */
+body.dark-theme button {
+  background-color: var(--accent-color);
+  color: #000;
+  border: none;
+}
+
+body.dark-theme button:hover {
+  background-color: #ff69b4;
+  box-shadow: 0 0 8px var(--accent-color);
+}
+
+/* Inputs & Forms */
+body.dark-theme input,
+body.dark-theme select,
+body.dark-theme textarea {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--accent-color);
+}
+
+/* Cards */
+body.dark-theme .center-card,
+body.dark-theme .center-table-card,
+body.dark-theme .card,
+body.dark-theme .form-container {
+  background-color: var(--card-bg);
+  box-shadow: 0 0 12px rgba(255, 105, 180, 0.3);
+}
+
+/* Table */
+body.dark-theme table {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+body.dark-theme th {
+  background-color: #292929;
+  color: var(--accent-color);
+}
+
+body.dark-theme td {
+  color: var(--text-color);
+}
+
+/* Booking Status Cards */
+body.dark-theme .approved {
+  background-color: #1e3b2f;
+  color: #00e676;
+  border-left: 4px solid #00e676;
+}
+body.dark-theme .rejected {
+  background-color: #3b1e1e;
+  color: #ff5252;
+  border-left: 4px solid #ff5252;
+}
+body.dark-theme .pending {
+  background-color: #3b2f1e;
+  color: #ffa726;
+  border-left: 4px solid #ffa726;
+}
+
+/* Popup */
+body.dark-theme .popup-card {
+  background-color: #292929;
+  color: var(--text-color);
+  box-shadow: 0 0 16px rgba(255, 20, 147, 0.5);
+}
+
+/* Plane & Vapor Glow in Dark Mode */
+body.dark-theme .plane {
+  filter: drop-shadow(0 0 6px var(--accent-color));
+}
+body.dark-theme .vapor {
+  filter: drop-shadow(0 0 2px var(--accent-color));
+}
+
+/* Toggle Button */
+.dark-toggle {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  padding: 6px 12px;
+  background-color: transparent;
+  border: 2px solid var(--accent-color);
+  border-radius: 6px;
+  color: var(--accent-color);
+  font-weight: bold;
+  z-index: 999;
+  transition: all 0.3s ease-in-out;
+}
+
+.dark-toggle:hover {
+  background-color: var(--accent-color);
+  color: #000;
+  box-shadow: 0 0 8px var(--accent-color);
+}/* ====== NEON PINK DARK MODE THEME ====== */
+body.dark-theme {
+  --bg-color: #121212;
+  --text-color: #ff8edb;
+  --card-bg: #1a1a1a;
+  --accent-color: #ff4fc4;
+  --input-bg: #292929;
+  --input-border: #ff8edb;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+body.dark-theme,
+body.dark-theme app-root,
+body.dark-theme .container,
+body.dark-theme .card,
+body.dark-theme .form,
+body.dark-theme input,
+body.dark-theme select,
+body.dark-theme textarea {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--input-border) !important;
+}
+
+/* Navbar Styling */
+body.dark-theme .navbar {
+  background-color: #1e1e1e !important;
+  color: var(--text-color) !important;
+}
+
+body.dark-theme .navbar a {
+  color: var(--accent-color);
+}
+body.dark-theme .navbar a:hover {
+  color: white;
+  border-bottom: 2px solid var(--accent-color);
+  text-shadow: 0 0 6px var(--accent-color);
+}
+
+/* Buttons */
+body.dark-theme button {
+  background-color: var(--accent-color);
+  color: #000;
+  border: none;
+}
+
+body.dark-theme button:hover {
+  background-color: #ff69b4;
+  box-shadow: 0 0 8px var(--accent-color);
+}
+
+/* Inputs & Forms */
+body.dark-theme input,
+body.dark-theme select,
+body.dark-theme textarea {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--accent-color);
+}
+
+/* Cards */
+body.dark-theme .center-card,
+body.dark-theme .center-table-card,
+body.dark-theme .card,
+body.dark-theme .form-container {
+  background-color: var(--card-bg);
+  box-shadow: 0 0 12px rgba(255, 105, 180, 0.3);
+}
+
+/* Table */
+body.dark-theme table {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+body.dark-theme th {
+  background-color: #292929;
+  color: var(--accent-color);
+}
+
+body.dark-theme td {
+  color: var(--text-color);
+}
+
+/* Booking Status Cards */
+body.dark-theme .approved {
+  background-color: #1e3b2f;
+  color: #00e676;
+  border-left: 4px solid #00e676;
+}
+body.dark-theme .rejected {
+  background-color: #3b1e1e;
+  color: #ff5252;
+  border-left: 4px solid #ff5252;
+}
+body.dark-theme .pending {
+  background-color: #3b2f1e;
+  color: #ffa726;
+  border-left: 4px solid #ffa726;
+}
+
+/* Popup */
+body.dark-theme .popup-card {
+  background-color: #292929;
+  color: var(--text-color);
+  box-shadow: 0 0 16px rgba(255, 20, 147, 0.5);
+}
+
+/* Plane & Vapor Glow in Dark Mode */
+body.dark-theme .plane {
+  filter: drop-shadow(0 0 6px var(--accent-color));
+}
+body.dark-theme .vapor {
+  filter: drop-shadow(0 0 2px var(--accent-color));
+}
+
+/* Toggle Button */
+.dark-toggle {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  padding: 6px 12px;
+  background-color: transparent;
+  border: 2px solid var(--accent-color);
+  border-radius: 6px;
+  color: var(--accent-color);
+  font-weight: bold;
+  z-index: 999;
+  transition: all 0.3s ease-in-out;
+}
+
+.dark-toggle:hover {
+  background-color: var(--accent-color);
+  color: #000;
+  box-shadow: 0 0 8px var(--accent-color);
+}
+
+
   .dark-toggle {
     position: absolute;
     top: 10px;

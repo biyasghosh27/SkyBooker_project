@@ -56,7 +56,7 @@ export class BookingFormComponent implements OnInit {
         //hide animation after 3 seconds
         setTimeout(()=>{
           this.showPlaneAnimation = false;
-        },10000);
+        },6500);
       },
       error:(err)=>{
         this.errorMessage = err.errorMessage || 'Booking failed. Please try again.';

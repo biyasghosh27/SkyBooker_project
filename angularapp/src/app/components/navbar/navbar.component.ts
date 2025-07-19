@@ -53,9 +53,8 @@ export class NavbarComponent implements OnInit {
   isDarkMode = false;
 
   toggleDarkMode() {
-  this.isDarkMode = !this.isDarkMode;
-  localStorage.setItem('darkMode', String(this.isDarkMode));
-  this.applyDarkMode();
+  document.body.classList.toggle('dark-theme');
+  const bg = document.querySelector
 }
 
 applyDarkMode() {
