@@ -53,8 +53,17 @@ export class NavbarComponent implements OnInit {
   isDarkMode = false;
 
   toggleDarkMode() {
-  document.body.classList.toggle('dark-theme');
-  const bg = document.querySelector
+  this.isDarkMode = !this.isDarkMode;
+  const body = document.body;
+  body.classList.toggle('dark-theme');
+  const bg = document.querySelector('.home-background') as HTMLElement;
+  if(bg){
+    bg.style.backgroundImage =  body.classList.contains('dark-theme')
+    ?
+    "https://dribbble.com/shots/2112738-Long-journey"
+    :
+    "https://img.freepik.com/free-photo/comic-style-airplane-illustration_23-2151813588.jpg?semt=ais_hybrid&w=740";
+  }
 }
 
 applyDarkMode() {
