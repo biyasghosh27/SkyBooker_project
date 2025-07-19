@@ -1,78 +1,41 @@
-.sky {
+/* .sky {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 9999;
     pointer-events: none;
+    z-index: 9999;
     overflow: visible;
   }
   
-  .orbit {
+  .path-svg {
+    width: 100vw;
+    height: 100vh;
     position: absolute;
-    width: 500px;
-    height: 500px;
-    top: 50%;
-    left: 50%;
-    margin-left: -250px;
-    margin-top: -250px;
-    animation: rotateAround 4s linear 2, flyAway 2s ease-in-out 8s forwards;
   }
   
-  .plane-with-trail {
+  .path-svg path {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2;
+    stroke-dasharray: 5 5;
+    opacity: 0.3;
+  }
+  
+  .plane-wrapper {
     position: absolute;
-    top: 50%;
-    left: 100%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
+    width: 50px;
+    height: 50px;
     font-size: 2.5rem;
+    animation: followPath 8s ease-in-out forwards;
+    offset-path: path("M -100 300 C 100 100, 300 500, 500 300 C 700 100, 900 500, 1100 100");
+    offset-rotate: auto;
+    background-color: red;
+
   }
   
-  .vapor {
-    margin-right: 10px;
-    font-size: 2rem;
-    animation: vaporFade 6s ease-out forwards;
-  }
-  
-  .plane {
+  .plane-icon {
     transform: rotate(45deg);
   }
-  
-  /* Make the orbit loop around center */
-  @keyframes rotateAround {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  /* Fade vapor out */
-  @keyframes vaporFade {
-    0% {
-      opacity: 1;
-    }
-    80% {
-      opacity: 0.8;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-  
-  /* Fly away after orbit */
-  @keyframes flyAway {
-    0% {
-      top: 50%;
-      left: 50%;
-    }
-    100% {
-      top: -200px;
-      left: 150vw;
-      opacity: 0;
-    }
-  }
-  
+   */

@@ -50,14 +50,14 @@ export class BookingFormComponent implements OnInit {
         
         //play sound
         const audio = new Audio();
-        audio.src = 'assets/sounds/';
-        audio.load();
-        audio.play();
+        // audio.src = 'assets/sounds/';
+        // audio.load();
+        // audio.play();
 
         //hide animation after 3 seconds
         setTimeout(()=>{
           this.showPlaneAnimation = false;
-        },8000);
+        },10000);
       },
       error:(err)=>{
         this.errorMessage = err.errorMessage || 'Booking failed. Please try again.';
