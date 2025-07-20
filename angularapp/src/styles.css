@@ -326,6 +326,7 @@ body.dark-theme .center-table-card {
   background-color: var(--card-bg);
   color: var(--text-color);
   border: 1px solid #444;
+  box-shadow: 0 0 12px rgba(255, 105, 180, 0.2);
 }
 
 /* HOMEPAGE BACKGROUND IMAGE IN DARK MODE */
@@ -364,7 +365,7 @@ body.dark-theme .logo {
 
 body.dark-theme .logo span {
   color: var(--neon-pink);
-  text-shadow: 0 0 10px var(--neon-pink);
+  text-shadow: 0 0 6px var(--neon-pink);
 }
 
 /* HEADINGS */
