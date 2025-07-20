@@ -332,6 +332,7 @@ body.dark-theme .center-table-card {
 /* HOMEPAGE BACKGROUND IMAGE IN DARK MODE */
 body.dark-theme .home-background {
   background-image: url('https://cdn.dribbble.com/userupload/20448576/file/original-1d96b92f9f25f235695c9a6e6a8288a8.png?resize=800x600&vertical=center');
+  
 }
 
 /* NAVBAR */
@@ -380,13 +381,18 @@ body.dark-theme h1 {
 body.dark-theme button {
   background-color: var(--neon-pink);
   color: white;
-  box-shadow: 0 0 8px var(--neon-pink);
+  box-shadow: 0 0 6px var(--neon-pink);
   border: none;
 }
 
 body.dark-theme button:hover {
   background-color: #ff0080;
-  box-shadow: 0 0 12px #ff0080;
+  box-shadow: 0 0 10px #ff0080;
+}
+
+body.dark-theme a{
+  color: #ff80cb;
+  text-shadow: 0 0 3px #ff80cb;
 }
 
 /* POPUP */
